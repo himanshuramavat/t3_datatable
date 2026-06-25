@@ -1,0 +1,62 @@
+.t3-datatable-panel .t3-datatable-toolbar {
+    align-items: center;
+    background-color: var(--typo3-surface-container-low);
+    border-bottom: 1px solid var(--typo3-component-border-color);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--typo3-spacing);
+    justify-content: space-between;
+    padding: calc(var(--typo3-spacing) * 0.75) var(--typo3-spacing);
+}
+
+.t3-datatable-panel .t3-datatable-search {
+    max-width: 360px;
+    min-width: 220px;
+}
+
+.t3-datatable-panel .pagination {
+    margin-bottom: 0;
+}
+
+.t3-datatable-panel th.t3-datatable-orderable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.t3-datatable-panel th.t3-datatable-sorted-asc::after,
+.t3-datatable-panel th.t3-datatable-sorted-desc::after {
+    font-size: 0.75em;
+    margin-inline-start: 0.35rem;
+    opacity: 0.7;
+}
+
+.t3-datatable-panel th.t3-datatable-sorted-asc::after {
+    content: "▲";
+}
+
+.t3-datatable-panel th.t3-datatable-sorted-desc::after {
+    content: "▼";
+}
+
+.t3-datatable-panel.is-loading {
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+.t3-datatable-panel.is-loading .t3-datatable-toolbar::after {
+    animation: t3-datatable-spin 0.8s linear infinite;
+    border: 2px solid var(--typo3-component-border-color);
+    border-radius: 50%;
+    border-top-color: var(--typo3-state-primary-default);
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    margin-inline-start: auto;
+    width: 1rem;
+}
+
+@keyframes t3-datatable-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,38 @@
+# Composer / TYPO3 test install
+/.Build/
+/vendor/
+/composer.lock
+
+# TYPO3 runtime and generated files
+/public/
+/var/
+/config/
+
+# PHPUnit / coverage
+/.phpunit.cache/
+/.phpunit.result.cache
+/Tests/Build/.phpunit.result.cache
+/coverage/
+/coverage.xml
+
+# Static analysis / coding standards
+/.php-cs-fixer.cache
+/.phpstan-result-cache
+
+# TYPO3 documentation render output
+/Documentation-GENERATED-temp/
+
+# Local environment
+/.env
+/.env.*
+!/.env.example
+
+# IDE / OS files
+/.idea/
+/.vscode/
+/.fleet/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~

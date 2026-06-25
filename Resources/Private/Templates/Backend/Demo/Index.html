@@ -1,0 +1,66 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Module" />
+
+<f:section name="Before">
+    <f:asset.css identifier="t3-datatable/backend-module" href="EXT:t3_datatable/Resources/Public/Css/backend-module.css" />
+</f:section>
+
+<f:section name="Content">
+    <h1>
+        <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.title" />
+    </h1>
+
+    <f:be.infobox
+        title="{f:translate(key: 'LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.infobox.title')}"
+        state="-1"
+    >
+        <p class="mb-3">
+            <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.infobox.message" />
+        </p>
+        <dl class="row mb-0">
+            <dt class="col-sm-3">
+                <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.meta.grid" />
+            </dt>
+            <dd class="col-sm-9"><code>{gridIdentifier}</code></dd>
+            <dt class="col-sm-3">
+                <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.meta.table" />
+            </dt>
+            <dd class="col-sm-9"><code>{tableName}</code></dd>
+            <dt class="col-sm-3">
+                <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.meta.pageLength" />
+            </dt>
+            <dd class="col-sm-9">{pageLength}</dd>
+        </dl>
+    </f:be.infobox>
+
+    <div class="card mt-4">
+        <div class="card-header">
+            <div class="card-icon">
+                <core:icon identifier="actions-view-table-expand" size="medium" />
+            </div>
+            <div class="card-header-body">
+                <h2 class="card-title">
+                    <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.card.title" />
+                </h2>
+                <span class="card-subtitle">
+                    <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.card.subtitle" />
+                </span>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <f:render partial="Module/DataTablePanel" arguments="{
+                tableId: 't3-datatable-demo',
+                gridIdentifier: gridIdentifier,
+                columns: columns,
+                columnsJson: columnsJson,
+                pageLength: pageLength
+            }" />
+        </div>
+    </div>
+</f:section>
+
+</html>

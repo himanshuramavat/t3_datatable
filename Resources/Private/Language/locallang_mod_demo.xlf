@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="messages" product-name="t3_datatable">
+        <header/>
+        <body>
+            <trans-unit id="mlang_tabs_tab">
+                <source>Demo</source>
+            </trans-unit>
+            <trans-unit id="mlang_labels_tablabel">
+                <source>Demo grid</source>
+            </trans-unit>
+            <trans-unit id="mlang_labels_tabdescr">
+                <source>Pages listed via the T3 DataTable engine.</source>
+            </trans-unit>
+            <trans-unit id="module.demo.title">
+                <source>Demo grid</source>
+            </trans-unit>
+            <trans-unit id="module.demo.infobox.title">
+                <source>Server-side DataTable</source>
+            </trans-unit>
+            <trans-unit id="module.demo.infobox.message">
+                <source>This module demonstrates the shared AJAX endpoint, column allowlisting, and CSP-safe JavaScript bootstrap using TYPO3 pages.</source>
+            </trans-unit>
+            <trans-unit id="module.demo.meta.grid">
+                <source>Grid identifier</source>
+            </trans-unit>
+            <trans-unit id="module.demo.meta.table">
+                <source>Database table</source>
+            </trans-unit>
+            <trans-unit id="module.demo.meta.pageLength">
+                <source>Rows per page</source>
+            </trans-unit>
+            <trans-unit id="module.demo.card.title">
+                <source>Pages</source>
+            </trans-unit>
+            <trans-unit id="module.demo.card.subtitle">
+                <source>Search, sort, and paginate via the registered grid.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

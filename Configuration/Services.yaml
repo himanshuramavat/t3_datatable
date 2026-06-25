@@ -1,0 +1,28 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  _instanceof:
+    HRR\T3Datatable\Contract\GridInterface:
+      tags: ['t3datatable.grid']
+
+  HRR\T3Datatable\:
+    resource: '../Classes/*'
+    exclude:
+      - '../Classes/DataTable/ColumnDefinition.php'
+      - '../Classes/Exception/*'
+
+  HRR\T3Datatable\Registry\GridRegistry:
+    arguments:
+      $grids: !tagged_iterator t3datatable.grid
+
+  HRR\T3Datatable\Controller\DataTableController:
+    public: true
+
+  HRR\T3Datatable\Controller\Backend\DemoController:
+    public: true
+
+  HRR\T3Datatable\Demo\PagesGrid:
+    tags: ['t3datatable.grid']
