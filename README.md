@@ -133,9 +133,6 @@ This extension was inspired by and built with help from the following projects a
 | Project / author | Role in `t3_datatable` |
 |------------------|------------------------|
 | **[yajra/laravel-datatables](https://github.com/yajra/laravel-datatables)** by [Arjay Angeles (yajra)](https://github.com/yajra) | Server-side DataTables protocol, grid engine concept, and query-processing patterns adapted for TYPO3 and Doctrine DBAL |
-| **[TYPO3 CMS](https://typo3.org/)** — `typo3/cms-backend` | Backend module shell (`ModuleTemplate`, `Module` layout, docheader, `table-fit`, core CSS, icons, `AjaxRequest`) |
-| **[georgringer/news](https://github.com/georgringer/news)** by [Georg Ringer](https://github.com/georgringer) | README structure and presentation reference |
-| **[rrp/t3-toon](https://packagist.org/packages/rrp/t3-toon)** by [Rohan Parmar](https://www.linkedin.com/in/rohanrparmar) & [Himanshu Ramavat](https://www.linkedin.com/in/himanshu-ramavat/) | Extension structure, backend module, and README conventions |
 
 ---
 
