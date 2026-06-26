@@ -33,6 +33,7 @@ final class DemoController
     public function indexAction(ServerRequestInterface $request): ResponseInterface
     {
         $this->pageRenderer->addInlineLanguageLabelFile(self::LOCALLANG_JS);
+        $this->pageRenderer->addCssFile('EXT:t3_datatable/Resources/Public/Css/backend-module.css');
         $this->pageRenderer->loadJavaScriptModule('@hrr/t3-datatable/datatable-backend.js');
 
         $grid = $this->gridRegistry->get(self::DEMO_GRID_IDENTIFIER);
@@ -40,7 +41,7 @@ final class DemoController
         $columns = $this->buildViewColumns($definition);
 
         $view = $this->moduleTemplateFactory->create($request);
-        $view->makeDocHeaderModuleMenu();
+        $view->getDocHeaderComponent()->disable();
         $view->setTitle('T3 DataTable', 'Demo');
 
         $view->assignMultiple([

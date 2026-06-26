@@ -5,53 +5,51 @@
 
 <f:layout name="Module" />
 
-<f:section name="Before">
-    <f:asset.css identifier="t3-datatable/backend-module" href="EXT:t3_datatable/Resources/Public/Css/backend-module.css" />
-</f:section>
-
 <f:section name="Content">
-    <h1>
-        <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.title" />
-    </h1>
+    <div class="t3-datatable-module">
 
-    <f:be.infobox
-        title="{f:translate(key: 'LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.infobox.title')}"
-        state="-1"
-    >
-        <p class="mb-3">
-            <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.infobox.message" />
-        </p>
-        <dl class="row mb-0">
-            <dt class="col-sm-3">
-                <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.meta.grid" />
-            </dt>
-            <dd class="col-sm-9"><code>{gridIdentifier}</code></dd>
-            <dt class="col-sm-3">
-                <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.meta.table" />
-            </dt>
-            <dd class="col-sm-9"><code>{tableName}</code></dd>
-            <dt class="col-sm-3">
-                <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.meta.pageLength" />
-            </dt>
-            <dd class="col-sm-9">{pageLength}</dd>
-        </dl>
-    </f:be.infobox>
+        <div class="t3-datatable-module__card">
+            <div class="t3-datatable-module__card-header">
+                <div class="t3-datatable-module__card-leading">
+                    <div class="t3-datatable-module__card-icon" aria-hidden="true">
+                        <core:icon identifier="actions-view-table-expand" size="medium" />
+                    </div>
+                    <div class="t3-datatable-module__card-text">
+                        <div class="t3-datatable-module__card-title-row">
+                            <h1 class="t3-datatable-module__card-title">
+                                <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.card.title" />
+                            </h1>
+                            <ul class="t3-datatable-module__chips" aria-label="{f:translate(key: 'LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.chips.label')}">
+                                <li class="t3-datatable-module__chip">
+                                    <span class="t3-datatable-module__chip-label">
+                                        <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.meta.grid" />
+                                    </span>
+                                    <code>{gridIdentifier}</code>
+                                </li>
+                                <li class="t3-datatable-module__chip">
+                                    <span class="t3-datatable-module__chip-label">
+                                        <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.meta.table" />
+                                    </span>
+                                    <code>{tableName}</code>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="t3-datatable-module__card-subtitle">
+                            <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.card.subtitle" />
+                        </p>
+                    </div>
+                </div>
+                <button type="button"
+                        class="btn btn-default btn-sm t3-datatable-module__refresh"
+                        id="t3-datatable-refresh-btn"
+                        title="{f:translate(key: 'LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.refresh')}">
+                    <core:icon identifier="actions-refresh" size="small" />
+                    <span class="t3-datatable-module__refresh-label">
+                        <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.refresh" />
+                    </span>
+                </button>
+            </div>
 
-    <div class="card mt-4">
-        <div class="card-header">
-            <div class="card-icon">
-                <core:icon identifier="actions-view-table-expand" size="medium" />
-            </div>
-            <div class="card-header-body">
-                <h2 class="card-title">
-                    <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.card.title" />
-                </h2>
-                <span class="card-subtitle">
-                    <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.card.subtitle" />
-                </span>
-            </div>
-        </div>
-        <div class="card-body p-0">
             <f:render partial="Module/DataTablePanel" arguments="{
                 tableId: 't3-datatable-demo',
                 gridIdentifier: gridIdentifier,
@@ -60,6 +58,25 @@
                 pageLength: pageLength
             }" />
         </div>
+
+        <footer class="t3-datatable-module__footer">
+            <span>
+                <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.footer.made_with" />
+                <a href="https://www.linkedin.com/in/himanshu-ramavat/" target="_blank" rel="noopener">Himanshu</a>
+            </span>
+            <div class="t3-datatable-module__footer-links">
+                <a href="https://packagist.org/users/himanshuramavat/" target="_blank" rel="noopener">
+                    <core:icon identifier="actions-link" size="small" />
+                    <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.footer.packagist" />
+                </a>
+                <span class="t3-datatable-module__footer-sep">|</span>
+                <a href="https://datatables.net/manual/server-side" target="_blank" rel="noopener">
+                    <core:icon identifier="actions-notebook-typoscript" size="small" />
+                    <f:translate key="LLL:EXT:t3_datatable/Resources/Private/Language/locallang_mod_demo.xlf:module.demo.footer.protocol" />
+                </a>
+            </div>
+        </footer>
+
     </div>
 </f:section>
 

@@ -54,6 +54,38 @@ function createControls(panel, options) {
   const toolbar = document.createElement('div');
   toolbar.className = 't3-datatable-toolbar';
 
+  const filters = document.createElement('div');
+  filters.className = 't3-datatable-toolbar__filters';
+
+  const lengthGroup = document.createElement('div');
+  lengthGroup.className = 't3-datatable-length';
+
+  const lengthLabel = document.createElement('label');
+  lengthLabel.className = 't3-datatable-length__label';
+  lengthLabel.textContent = translate('length.label', 'Show');
+
+  const length = document.createElement('select');
+  length.className = 'form-select form-select-sm t3-datatable-length__select';
+  length.setAttribute('aria-label', translate('length.label', 'Show'));
+
+  const current = options.pageLength ?? 25;
+  const choices = Array.from(new Set([10, 25, 50, 100, current]))
+    .sort((a, b) => a - b);
+  choices.forEach((value) => {
+    const opt = document.createElement('option');
+    opt.value = String(value);
+    opt.textContent = String(value);
+    if (value === current) {
+      opt.selected = true;
+    }
+    length.append(opt);
+  });
+
+  const lengthId = `${(panel?.querySelector('table')?.id) ?? 't3-datatable'}-length`;
+  length.id = lengthId;
+  lengthLabel.htmlFor = lengthId;
+  lengthGroup.append(lengthLabel, length);
+
   const searchGroup = document.createElement('div');
   searchGroup.className = 'input-group t3-datatable-search';
 
@@ -65,6 +97,7 @@ function createControls(panel, options) {
   search.setAttribute('aria-label', search.placeholder);
 
   searchGroup.append(search);
+  filters.append(lengthGroup, searchGroup);
 
   const nav = document.createElement('nav');
   nav.setAttribute('aria-labelledby', 't3-datatable-pagination');
@@ -100,7 +133,7 @@ function createControls(panel, options) {
   pagination.append(rangeItem, prevItem, nextItem);
   nav.append(pagination);
 
-  toolbar.append(searchGroup, nav);
+  toolbar.append(filters, nav);
   panel.prepend(toolbar);
 
   Icons.getIcon('actions-view-paging-previous', Icons.sizes.small).then((markup) => {
@@ -114,7 +147,7 @@ function createControls(panel, options) {
     next.textContent = '›';
   });
 
-  return { toolbar, search, rangeLink, prevItem, prev, nextItem, next, panel };
+  return { toolbar, length, search, rangeLink, prevItem, prev, nextItem, next, panel };
 }
 
 /**
@@ -255,6 +288,17 @@ export function initDataTable(selector, options) {
     }
   };
 
+  controls.length.addEventListener('change', () => {
+    const next = Number.parseInt(controls.length.value, 10);
+    if (Number.isNaN(next) || next <= 0) {
+      return;
+    }
+    state.length = next;
+    state.start = 0;
+    state.draw += 1;
+    load().catch(console.error);
+  });
+
   controls.search.addEventListener('input', () => {
     window.clearTimeout(searchTimer);
     searchTimer = window.setTimeout(() => {
@@ -302,12 +346,18 @@ export function initDataTable(selector, options) {
 
   load().catch(console.error);
 
-  return {
+  const api = {
     reload: () => {
       state.draw += 1;
       return load();
     },
   };
+
+  if (panel instanceof HTMLElement) {
+    panel.__t3DatatableApi = api;
+  }
+
+  return api;
 }
 
 /**
@@ -340,6 +390,17 @@ function initFromDataset(table) {
 }
 
 /**
+ * Demo module helper: refresh button in the card header.
+ */
+function initDemoModuleChrome() {
+  const refreshBtn = document.getElementById('t3-datatable-refresh-btn');
+  refreshBtn?.addEventListener('click', () => {
+    const panel = document.querySelector('[data-t3-datatable-panel]');
+    panel?.__t3DatatableApi?.reload().catch(console.error);
+  });
+}
+
+/**
  * Auto-initialise every `[data-t3-datatable]` table on the page. This keeps the
  * backend Content Security Policy intact by avoiding inline scripts entirely.
  */
@@ -347,6 +408,7 @@ export function bootstrap() {
   document
     .querySelectorAll('table[data-t3-datatable]')
     .forEach((table) => initFromDataset(table));
+  initDemoModuleChrome();
 }
 
 DocumentService.ready().then(() => bootstrap());

@@ -15,26 +15,47 @@
             <trans-unit id="module.demo.title">
                 <source>Demo grid</source>
             </trans-unit>
+            <trans-unit id="module.demo.subtitle">
+                <source>Server-side search, sort, and pagination for TYPO3 backend modules.</source>
+            </trans-unit>
+            <trans-unit id="module.demo.refresh">
+                <source>Refresh</source>
+            </trans-unit>
             <trans-unit id="module.demo.infobox.title">
                 <source>Server-side DataTable</source>
             </trans-unit>
             <trans-unit id="module.demo.infobox.message">
                 <source>This module demonstrates the shared AJAX endpoint, column allowlisting, and CSP-safe JavaScript bootstrap using TYPO3 pages.</source>
             </trans-unit>
+            <trans-unit id="module.demo.note.close">
+                <source>Dismiss note</source>
+            </trans-unit>
             <trans-unit id="module.demo.meta.grid">
-                <source>Grid identifier</source>
+                <source>Grid</source>
             </trans-unit>
             <trans-unit id="module.demo.meta.table">
-                <source>Database table</source>
+                <source>Table</source>
             </trans-unit>
             <trans-unit id="module.demo.meta.pageLength">
-                <source>Rows per page</source>
+                <source>Page size</source>
             </trans-unit>
             <trans-unit id="module.demo.card.title">
                 <source>Pages</source>
             </trans-unit>
             <trans-unit id="module.demo.card.subtitle">
-                <source>Search, sort, and paginate via the registered grid.</source>
+                <source>Server-side search, sort, and pagination — change page size in the toolbar below.</source>
+            </trans-unit>
+            <trans-unit id="module.demo.chips.label">
+                <source>Grid configuration</source>
+            </trans-unit>
+            <trans-unit id="module.demo.footer.made_with">
+                <source>Made with 🧡 for TYPO3 developers by</source>
+            </trans-unit>
+            <trans-unit id="module.demo.footer.packagist">
+                <source>Packagist</source>
+            </trans-unit>
+            <trans-unit id="module.demo.footer.protocol">
+                <source>DataTables protocol</source>
             </trans-unit>
         </body>
     </file>

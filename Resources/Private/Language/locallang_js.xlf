@@ -6,6 +6,9 @@
             <trans-unit id="search.placeholder">
                 <source>Search records</source>
             </trans-unit>
+            <trans-unit id="length.label">
+                <source>Show</source>
+            </trans-unit>
             <trans-unit id="pagination.previous">
                 <source>Previous</source>
             </trans-unit>
