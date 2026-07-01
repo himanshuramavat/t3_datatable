@@ -3,11 +3,17 @@
     "type": "typo3-cms-extension",
     "description": "T3 DataTable - Create powerful TYPO3 backend data grids with automatic search, sorting and pagination — no custom AJAX or SQL boilerplate required.",
     "license": "GPL-2.0-or-later",
+    "readme": "README.md",
     "authors": [
         {
             "name": "Himanshu Ramavat",
             "email": "himanshuramavat07@gmail.com",
             "homepage": "https://himanshuramavat.in",
+            "role": "Developer"
+        },
+        {
+            "name": "Rohan Parmar",
+            "homepage": "https://www.linkedin.com/in/rohanrparmar/",
             "role": "Developer"
         }
     ],

@@ -24,9 +24,9 @@ Recommended: data-attribute auto-initialization (CSP-safe)
 ==========================================================
 
 The TYPO3 backend enforces a strict :doc:`Content Security Policy <t3coreapi:security/content-security-policy/index>`
-that blocks inline ``<script>`` execution. Do **not** put an inline
-``<script type="module">`` in your Fluid template — it will be rejected with a
-``script-src`` violation.
+that blocks inline ``<script>`` execution. Do not put an inline
+``<script type="module">`` in your Fluid template. The browser will reject it
+with a ``script-src`` violation.
 
 Instead, load the module from your controller and let it auto-initialize from
 ``data-*`` attributes on the table:
@@ -37,7 +37,7 @@ Instead, load the module from your controller and let it auto-initialize from
    $this->pageRenderer->loadJavaScriptModule('@hrr/t3-datatable/datatable-backend.js');
 
 .. code-block:: html
-   :caption: Fluid template — no inline script required
+   :caption: Fluid template, no inline script required
 
    <table id="my-records-table"
           class="table table-striped"

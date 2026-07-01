@@ -14,7 +14,7 @@ Requirements
 ============
 
 - TYPO3 13.4 or 14.3
-- PHP 8.2–8.5
+- PHP 8.2 up to 8.5
 
 Install with Composer
 =====================

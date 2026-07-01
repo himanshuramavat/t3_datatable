@@ -8,7 +8,7 @@ Registering a grid
    :local:
    :depth: 2
 
-Step 1 — Implement GridInterface
+Step 1: Implement GridInterface
 ================================
 
 .. code-block:: php
@@ -48,7 +48,7 @@ Step 1 — Implement GridInterface
        }
    }
 
-Step 2 — Tag in Services.yaml
+Step 2: Tag in Services.yaml
 =============================
 
 .. code-block:: yaml
@@ -64,7 +64,7 @@ Step 2 — Tag in Services.yaml
 
 The grid class is auto-registered when it implements :php:`GridInterface`.
 
-Step 3 — Use the grid identifier in JavaScript
+Step 3: Use the grid identifier in JavaScript
 ==============================================
 
 Pass the same identifier to :js:`initDataTable()`:

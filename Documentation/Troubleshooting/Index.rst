@@ -71,11 +71,12 @@ Verify searchable columns are declared with ``searchable: true``.
 Render documentation locally
 ============================
 
-From the package root (requires Docker, same as other TYPO3 extensions):
+You can preview this documentation on your own machine. You need Docker
+installed, the same as with other TYPO3 extensions. From the package root, run:
 
 .. code-block:: bash
 
    composer doc-watch
 
-Add a ``doc-watch`` script to :file:`composer.json` if you use the TYPO3
-documentation renderer image (see :file:`packages/ns_aiuniverse/composer.json`).
+This starts the official TYPO3 documentation renderer and watches for changes,
+so the pages rebuild as you edit them.

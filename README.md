@@ -13,7 +13,7 @@
 
 ## ✨ What is T3 DataTable?
 
-**T3 DataTable** brings server-side **searchable, sortable, and paginated** data grids to TYPO3 backend modules — without writing custom AJAX endpoints, SQL boilerplate, or inline JavaScript.
+**T3 DataTable** brings server-side **searchable, sortable, and paginated** data grids to TYPO3 backend modules, without writing custom AJAX endpoints, SQL boilerplate, or inline JavaScript.
 
 Register a grid, load the ES module, and render a table with `data-*` attributes. The extension handles request parsing, Doctrine DBAL queries, column allowlisting, and JSON responses compatible with the [DataTables server-side protocol](https://datatables.net/manual/server-side).
 
@@ -22,7 +22,7 @@ Register a grid, load the ES module, and render a table with `data-*` attributes
 ## 🚀 Key Features
 
 - 🔍 Server-side search, sort, and pagination over any database table
-- 🧩 Simple grid API — implement `GridInterface`, tag it, done
+- 🧩 Simple grid API: implement `GridInterface`, tag it, done
 - 🛡️ Column allowlisting before any search or sort touches the query
 - 🔒 CSP-safe JavaScript bootstrap (no inline scripts)
 - 🧱 TYPO3-native backend module shell (`ModuleTemplate`, docheader, infobox, card UI)
@@ -85,7 +85,7 @@ Vendor\MyExt\Grid\PagesGrid:
   tags: ['t3datatable.grid']
 ```
 
-**3. Render the table (no inline JS — CSP-safe):**
+**3. Render the table (no inline JS, CSP-safe):**
 
 ```php
 // In your backend controller
@@ -103,13 +103,16 @@ $this->pageRenderer->loadJavaScriptModule('@hrr/t3-datatable/datatable-backend.j
 
 The module auto-initializes every `[data-t3-datatable]` table on `DocumentService.ready()`.
 
+> 📖 Integrating a grid for a table in your own extension? See the step-by-step
+> [Integration Guide](GUIDE.md).
+
 ---
 
 ## 🧰 Compatibility
 
 | TYPO3       | PHP       | Extension Version |
 | ----------- | --------- | ----------------- |
-| 13.4 – 14.3 | 8.2 – 8.4 | 1.0.0             |
+| 13.4 - 14.3 | 8.2 - 8.4 | 1.0.0             |
 
 ---
 
@@ -138,7 +141,9 @@ This extension was inspired by and built with help from the following projects a
 
 ## 👨‍💻 Author
 
-- **[Himanshu Ramavat](https://www.linkedin.com/in/himanshu-ramavat/)** — [himanshuramavat.in](https://himanshuramavat.in) · [Packagist](https://packagist.org/users/himanshuramavat/)
+
+- **[Himanshu Ramavat](https://www.linkedin.com/in/himanshu-ramavat/)**
+- **[Rohan Parmar](https://www.linkedin.com/in/rohanrparmar)**
 
 ---
 

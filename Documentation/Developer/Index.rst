@@ -43,7 +43,8 @@ Core contract
 AJAX endpoint
 =============
 
-All grids share one route — no per-extension AJAX registration required:
+Every grid shares one route, so you never have to register your own AJAX
+endpoint:
 
 .. list-table::
    :header-rows: 1
