@@ -13,7 +13,7 @@ Configuration
 Overview
 ========
 
-There is no global extension configuration here. |extension_name| ships no
+There is no global extension configuration here. T3 DataTable ships no
 ``ext_conf_template.txt``, and there are no options to set in the install tool.
 You configure everything per grid inside :php:`GridInterface::build()`.
 

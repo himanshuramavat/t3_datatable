@@ -13,7 +13,7 @@ Introduction
 What it does
 ============
 
-|extension_name| gives your TYPO3 backend modules a data grid that does the
+T3 DataTable gives your TYPO3 backend modules a data grid that does the
 search, sort, and paging work on the server. It speaks the same JSON protocol
 as the DataTables library, so the browser only ever loads one page of rows at a
 time.

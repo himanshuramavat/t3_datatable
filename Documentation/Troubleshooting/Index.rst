@@ -27,7 +27,7 @@ allowlist. Only use alphanumeric column names with dots/underscores.
 
 - Implement :php:`GridInterface` in your extension.
 - Add the ``t3datatable.grid`` tag via ``_instanceof`` in **your**
-  :file:`Services.yaml` (the tag in |extension_name| alone does not apply to
+  :file:`Services.yaml` (the tag in T3 DataTable alone does not apply to
   foreign packages).
 - Flush caches after adding a new grid class.
 

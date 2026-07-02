@@ -23,7 +23,7 @@ Public frontend pages do not have this environment.
 Recommended: data-attribute auto-initialization (CSP-safe)
 ==========================================================
 
-The TYPO3 backend enforces a strict :doc:`Content Security Policy <t3coreapi:security/content-security-policy/index>`
+The TYPO3 backend enforces a strict :doc:`Content Security Policy <t3coreapi:ApiOverview/ContentSecurityPolicy/Index>`
 that blocks inline ``<script>`` execution. Do not put an inline
 ``<script type="module">`` in your Fluid template. The browser will reject it
 with a ``script-src`` violation.

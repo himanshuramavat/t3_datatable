@@ -1,7 +1,3 @@
-.. |extension_key| replace:: t3_datatable
-.. |extension_name| replace:: T3 DataTable
-.. |vendor| replace:: HRR
-
 .. role:: php(code)
    :language: php
 
