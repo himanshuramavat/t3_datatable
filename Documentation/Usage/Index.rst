@@ -17,6 +17,8 @@ After installation, open:
 
 :guilabel:`Admin Tools > T3 DataTable > Demo grid`
 
+to see a working server-side grid using the ``pages`` table.
+
 This module lists ``pages`` via the ``demo_pages`` grid identifier. It
 demonstrates:
 

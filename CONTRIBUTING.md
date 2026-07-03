@@ -43,23 +43,19 @@ PHPStan, and PHP-CS-Fixer.
 Please run the same checks that CI runs before you push. All of them are
 available as Composer scripts.
 
-Unit and functional tests:
+Run everything in one go:
+
+```bash
+composer ci              # cs:check + stan + unit + functional
+```
+
+Or run the checks individually:
 
 ```bash
 composer test            # unit tests
 composer test:functional # functional tests
 composer test:all        # both
-```
-
-Static analysis with PHPStan:
-
-```bash
-composer stan
-```
-
-Coding standards with PHP-CS-Fixer:
-
-```bash
+composer stan            # PHPStan
 composer cs:check        # report problems only (dry run)
 composer cs:fix          # apply the fixes for you
 ```

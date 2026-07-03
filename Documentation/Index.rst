@@ -16,10 +16,16 @@ T3 DataTable
    en
 
 :Author:
-   HRR
+   Himanshu Ramavat, Rohan Parmar
 
 :License:
    GPL-2.0-or-later
+
+:Repository:
+   https://github.com/himanshuramavat/t3_datatable
+
+:Issues:
+   https://github.com/himanshuramavat/t3_datatable/issues
 
 ----
 

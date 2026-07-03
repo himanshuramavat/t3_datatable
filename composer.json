@@ -68,6 +68,11 @@
         }
     },
     "scripts": {
+        "ci": [
+            "@composer cs:check",
+            "@composer stan",
+            "@composer test:all"
+        ],
         "cs:check": ".Build/bin/php-cs-fixer fix --dry-run --diff",
         "cs:fix": ".Build/bin/php-cs-fixer fix",
         "doc-watch": "docker run --rm -it --pull always -v ./Documentation:/project/Documentation -v ./Documentation-GENERATED-temp:/project/Documentation-GENERATED-temp -p 1337:1337 ghcr.io/typo3-documentation/render-guides:latest --config=Documentation --watch",
@@ -80,6 +85,7 @@
         ]
     },
     "scripts-descriptions": {
+        "ci": "Run coding standards, PHPStan, and all tests",
         "cs:check": "Run PHP-CS-Fixer in dry-run mode",
         "cs:fix": "Apply PHP-CS-Fixer fixes",
         "doc-watch": "Render documentation with watcher",

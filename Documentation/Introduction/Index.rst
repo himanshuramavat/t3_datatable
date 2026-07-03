@@ -53,7 +53,7 @@ the backend only.
 Requirements
 ============
 
-- TYPO3 13.4 or 14.3
+- TYPO3 13 LTS or 14
 - PHP 8.2 or newer
 - A backend module context. It is not meant for public frontend pages.
 
