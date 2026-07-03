@@ -11,7 +11,7 @@
 
 ---
 
-## ✨ What is T3 DataTable?
+## What is T3 DataTable?
 
 **T3 DataTable** brings server-side **searchable, sortable, and paginated** data grids to TYPO3 backend modules, without writing custom AJAX endpoints, SQL boilerplate, or inline JavaScript.
 
@@ -19,96 +19,44 @@ Register a grid, load the ES module, and render a table with `data-*` attributes
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
-- 🔍 Server-side search, sort, and pagination over any database table
-- 🧩 Simple grid API: implement `GridInterface`, tag it, done
-- 🛡️ Column allowlisting before any search or sort touches the query
-- 🔒 CSP-safe JavaScript bootstrap (no inline scripts)
-- 🧱 TYPO3-native backend module shell (`ModuleTemplate`, docheader, infobox, card UI)
-- 🔌 One shared AJAX endpoint (`t3datatable_data`) for all grids
-- ✅ PHPUnit, PHPStan, and PHP-CS-Fixer wired in
-- 📚 Standard TYPO3 documentation in `Documentation/`
+→ Server-side search, sort, and pagination over any database table  
+→ Simple grid API: implement `GridInterface`, tag it, done  
+→ Column allowlisting before any search or sort touches the query  
+→ CSP-safe JavaScript bootstrap (no inline scripts)  
+→ TYPO3-native backend module shell (`ModuleTemplate`, docheader, infobox, card UI)  
+→ One shared AJAX endpoint (`t3datatable_data`) for all grids  
+→ PHPUnit, PHPStan, and PHP-CS-Fixer wired in  
+→ Standard TYPO3 documentation in `Documentation/`
 
 ---
 
-## 📦 Installation
+## Installation
 
-### ➤ Composer (Packagist)
+### Composer (Packagist)
 
 ```bash
 composer require hrr/t3-datatable
 ```
 
-🔗 https://packagist.org/users/himanshuramavat/
+Packagist: https://packagist.org/users/himanshuramavat/
 
 Then open **Admin Tools → T3 DataTable → Demo grid** to see the built-in `pages` demo.
 
 ---
 
-## 🧠 Quick Usage Example
+## Documentation
 
-**1. Define a grid:**
+Full documentation is available online, including setup instructions, grid
+configuration, and a step-by-step integration guide for adding a grid to your
+own extension:
 
-```php
-use HRR\T3Datatable\Contract\GridInterface;
-use HRR\T3Datatable\DataTable\GridDefinition;
-
-final class PagesGrid implements GridInterface
-{
-    public function getIdentifier(): string
-    {
-        return 'demo_pages';
-    }
-
-    public function getTableName(): string
-    {
-        return 'pages';
-    }
-
-    public function build(GridDefinition $definition): void
-    {
-        $definition
-            ->addColumn('uid', 'UID', searchable: false, orderable: true)
-            ->addColumn('title', 'Title', searchable: true, orderable: true)
-            ->addColumn('slug', 'Slug', searchable: true, orderable: true)
-            ->setDefaultOrder('uid', 'ASC')
-            ->setPageLength(10);
-    }
-}
-```
-
-**2. Tag it in your `Configuration/Services.yaml`:**
-
-```yaml
-Vendor\MyExt\Grid\PagesGrid:
-  tags: ['t3datatable.grid']
-```
-
-**3. Render the table (no inline JS, CSP-safe):**
-
-```php
-// In your backend controller
-$this->pageRenderer->loadJavaScriptModule('@hrr/t3-datatable/datatable-backend.js');
-```
-
-```html
-<table data-t3-datatable="demo_pages"
-       data-columns="{columnsJson}"
-       data-page-length="10">
-    <thead>…</thead>
-    <tbody></tbody>
-</table>
-```
-
-The module auto-initializes every `[data-t3-datatable]` table on `DocumentService.ready()`.
-
-> 📖 Integrating a grid for a table in your own extension? See the step-by-step
-> [Integration Guide](GUIDE.md).
+**https://docs.typo3.org/p/hrr/t3-datatable/main/en-us/**
 
 ---
 
-## 🧰 Compatibility
+## Compatibility
 
 | TYPO3       | PHP       | Extension Version |
 | ----------- | --------- | ----------------- |
@@ -116,7 +64,7 @@ The module auto-initializes every `[data-t3-datatable]` table on `DocumentServic
 
 ---
 
-## 🛠️ Development
+## Development
 
 From the package root:
 
@@ -129,7 +77,7 @@ composer cs:check      # PHP-CS-Fixer (dry-run)
 
 ---
 
-## 🙏 Credits & Acknowledgements
+## Credits & Acknowledgements
 
 This extension was inspired by and built with help from the following projects and developers:
 
@@ -139,26 +87,21 @@ This extension was inspired by and built with help from the following projects a
 
 ---
 
-## 👨‍💻 Author
+## Authors
 
-
-- **[Himanshu Ramavat](https://www.linkedin.com/in/himanshu-ramavat/)**
-- **[Rohan Parmar](https://www.linkedin.com/in/rohanrparmar)**
-
----
-
-## 💡 Contributing
-
-Contributions are welcome and appreciated ❤️
-
-- Fork the repository
-- Create a feature branch
-- Commit your changes
-- Submit a Pull Request
+→ **[Himanshu Ramavat](https://www.linkedin.com/in/himanshu-ramavat/)**  
+→ **[Rohan Parmar](https://www.linkedin.com/in/rohanrparmar)**
 
 ---
 
-## 📜 License
+## Contributing
+
+Contributions are welcome and appreciated. Please read the
+[Contributing Guide](CONTRIBUTING.md) before opening a pull request.
+
+---
+
+## License
 
 Licensed under the [GNU General Public License v2.0 or later](https://www.gnu.org/licenses/gpl-2.0.html).
 
