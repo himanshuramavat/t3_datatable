@@ -54,9 +54,10 @@ Then activate **T3 DataTable** in **Admin Tools → Extensions**.
 
 After installation open
 
-**Admin Tools → T3 DataTable → Demo grid**
+**Web → T3 DataTable**
 
 to see a working server-side grid using the `pages` table.
+(On TYPO3 14 the module appears under **Content → T3 DataTable**.)
 
 ## Quick start
 
