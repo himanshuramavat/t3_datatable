@@ -15,9 +15,14 @@ Demo backend module
 
 After installation, open:
 
-:guilabel:`Admin Tools > T3 DataTable > Demo grid`
+:guilabel:`Web > T3 DataTable`
 
 to see a working server-side grid using the ``pages`` table.
+
+.. note::
+
+   On TYPO3 14 the module appears under
+   :guilabel:`Content > T3 DataTable`.
 
 This module lists ``pages`` via the ``demo_pages`` grid identifier. It
 demonstrates:
