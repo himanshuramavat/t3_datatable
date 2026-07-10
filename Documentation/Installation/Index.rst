@@ -51,9 +51,14 @@ Demo
 
 After activation, open:
 
-:guilabel:`Admin Tools > T3 DataTable > Demo grid`
+:guilabel:`Web > T3 DataTable`
 
 to see a working server-side grid using the ``pages`` table.
+
+.. note::
+
+   On TYPO3 14 the module appears under
+   :guilabel:`Content > T3 DataTable`.
 
 Verify installation
 ===================
@@ -62,7 +67,8 @@ After activation:
 
 - AJAX route ``t3datatable_data`` is registered.
 - JavaScript import map entry ``@hrr/t3-datatable/datatable-backend.js`` is available.
-- Demo module appears under :guilabel:`Admin Tools > T3 DataTable > Demo grid`.
+- Demo module appears under :guilabel:`Web > T3 DataTable`
+  (:guilabel:`Content > T3 DataTable` on TYPO3 14).
 
 Run tests (optional)
 ====================
