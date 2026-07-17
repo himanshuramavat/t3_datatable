@@ -29,10 +29,11 @@ T3 DataTable
 
 ----
 
-T3 DataTable is a server-side grid engine for TYPO3 backend modules.
+T3 DataTable is a server-side grid engine for **custom TYPO3 backend modules**.
 Register a grid for any database table and you get a secured AJAX endpoint plus
-a searchable, sortable, and paginated table in the backend, without writing SQL
-boilerplate by hand.
+a searchable, sortable, and paginated table, without writing SQL boilerplate by
+hand. It complements (and does not replace) the core :guilabel:`Web > List`
+module (:php:`DatabaseRecordList`) used for TCA records on a page.
 
 This documentation is for two groups of people:
 

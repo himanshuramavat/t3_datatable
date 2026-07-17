@@ -20,7 +20,9 @@ time.
 
 Here is what you get out of the box:
 
-- Search across every column at once, or filter a single column on its own.
+- Global search across every searchable column you declared (the shipped UI
+  exposes one search box; per-column search values are supported by the AJAX
+  protocol if your own JavaScript sends them).
 - Sort by any column you allow. Each column name is checked against an
   allowlist before it reaches the query.
 - Page through large tables on the server, so the browser never has to hold the
@@ -65,6 +67,10 @@ something else:
 
 - It is not a full port of `Laravel DataTables <https://github.com/yajra/laravel-datatables>`_.
   It is built for TYPO3 with Doctrine DBAL, PSR-7, and backend routes.
-- It is not a replacement for the core List module or for workspace-aware
-  record lists.
+- It is not a replacement for the core :guilabel:`Web > List` module
+  (:php:`TYPO3\\CMS\\Backend\\RecordList\\DatabaseRecordList`). That module
+  already lists TCA records on a page with search, pagination, and editing.
+  T3 DataTable targets **custom backend modules** that need a DataTables-style
+  server-side grid API over a table, without building your own AJAX endpoint.
+  It also does not replace workspace-aware record lists.
 - It is not a frontend AJAX table library. Frontend use is out of scope for now.

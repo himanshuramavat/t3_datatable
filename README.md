@@ -10,8 +10,10 @@
 
 Server-side searchable, sortable and paginated data grids for TYPO3 backend modules.
 
-**T3 DataTable** brings server-side data grids to TYPO3 backend modules without
-writing custom AJAX endpoints, SQL boilerplate, or inline JavaScript.
+**T3 DataTable** brings server-side data grids to custom TYPO3 backend modules
+without writing custom AJAX endpoints, SQL boilerplate, or inline JavaScript.
+It complements the core **Web → List** module (`DatabaseRecordList`); it does
+not replace TCA record lists on a page.
 
 Register a grid, load the ES module, and render a table with `data-*`
 attributes. The extension handles request parsing, Doctrine DBAL queries,

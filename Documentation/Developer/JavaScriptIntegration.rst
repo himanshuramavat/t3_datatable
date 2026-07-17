@@ -68,7 +68,9 @@ Supported ``data-*`` attributes:
    * - ``data-t3-datatable``
      - Required. Grid identifier (matches :php:`GridInterface::getIdentifier()`)
    * - ``data-columns``
-     - Required. JSON array of ``{ data, title, searchable?, orderable? }``
+     - Required. JSON array of ``{ data, title, searchable?, orderable? }``.
+       Cannot express ``render`` / ``virtual`` / ``html`` (use programmatic
+       :js:`initDataTable()` for those)
    * - ``data-page-length``
      - Rows per page (default ``25``)
    * - ``data-search-placeholder``
@@ -106,11 +108,84 @@ Options
    * - ``gridIdentifier``
      - Required. Matches :php:`GridInterface::getIdentifier()`
    * - ``columns``
-     - Required. Array of ``{ data, title, searchable?, orderable? }``
+     - Required. Array of column objects (see below)
    * - ``pageLength``
      - Rows per page (default ``25``)
    * - ``searchPlaceholder``
      - Placeholder for the search input
+   * - ``onRowsRendered``
+     - Optional. ``(tbody, rows) => void`` called after each successful draw
+       (useful for selection UI, tooltips, or event wiring on AJAX rows)
+
+Column object
+=============
+
+Each entry in ``columns`` may include:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 75
+
+   * - Property
+     - Description
+   * - ``data``
+     - Required. Field name from the AJAX row (or a client-only key when
+       ``virtual`` is ``true``)
+   * - ``title``
+     - Header label
+   * - ``searchable``
+     - Included in global search when ``true`` (default ``true``). Ignored for
+       virtual columns
+   * - ``orderable``
+     - Clickable sort header when ``true`` (default ``true``)
+   * - ``virtual``
+     - Client-only column. Omitted from the AJAX payload and from SQL. Use for
+       checkboxes, action buttons, or other UI that is not a DB field. Order
+       indices are remapped automatically
+   * - ``html``
+     - When ``true``, a string returned from ``render`` is assigned with
+       ``innerHTML``. Default is text (``textContent``)
+   * - ``render``
+     - Optional. ``(value, row, td) => string | Node | null``. Formats the cell.
+       Return a ``Node`` to append DOM, a ``string`` for text/HTML, or ``null``
+       if you mutate ``td`` yourself (e.g. async icon loading)
+
+Example with a virtual actions column:
+
+.. code-block:: javascript
+
+   initDataTable('#my-records-table', {
+     gridIdentifier: 'myext_records',
+     columns: [
+       { data: 'uid', title: 'UID', searchable: false },
+       { data: 'title', title: 'Title' },
+       {
+         data: '_actions',
+         title: '',
+         virtual: true,
+         orderable: false,
+         searchable: false,
+         render: (_value, row) => {
+           const button = document.createElement('button');
+           button.type = 'button';
+           button.className = 'btn btn-default btn-sm';
+           button.dataset.uid = String(row.uid);
+           button.textContent = 'Delete';
+           return button;
+         },
+       },
+     ],
+     onRowsRendered: (tbody) => {
+       // Wire listeners on newly drawn rows if needed
+     },
+   });
+
+.. note::
+
+   ``data-*`` auto-initialization can only pass JSON-serializable column
+   options (``data``, ``title``, ``searchable``, ``orderable``). Use
+   programmatic :js:`initDataTable()` when you need ``render``, ``virtual``,
+   ``html``, or ``onRowsRendered``.
 
 Return value
 ============

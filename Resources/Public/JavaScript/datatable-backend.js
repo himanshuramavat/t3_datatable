@@ -12,26 +12,53 @@ function translate(key, fallback) {
 }
 
 /**
+ * @param {Array<{virtual?: boolean}>} columns
+ * @param {number} displayIndex
+ * @returns {number}
+ */
+function toServerColumnIndex(columns, displayIndex) {
+  let serverIndex = -1;
+  for (let i = 0; i <= displayIndex; i += 1) {
+    if (!columns[i]?.virtual) {
+      serverIndex += 1;
+    }
+  }
+  return serverIndex;
+}
+
+/**
  * Build DataTables-compatible request payload for the TYPO3 backend endpoint.
+ * Virtual (client-only) columns are omitted; order indices are remapped.
  *
  * @param {object} state
  * @returns {object}
  */
 function buildRequestPayload(state) {
-  const columns = state.columns.map((column, index) => ({
-    data: column.data,
-    name: column.data,
-    searchable: column.searchable !== false,
-    orderable: column.orderable !== false,
-    search: {
-      value: state.columnSearch[index] ?? '',
-      regex: false,
-    },
-  }));
+  const columns = [];
 
-  const order = state.orderColumnIndex >= 0
-    ? [{ column: state.orderColumnIndex, dir: state.orderDirection }]
-    : [];
+  state.columns.forEach((column, displayIndex) => {
+    if (column.virtual) {
+      return;
+    }
+    columns.push({
+      data: column.data,
+      name: column.data,
+      searchable: column.searchable !== false,
+      orderable: column.orderable !== false,
+      search: {
+        value: state.columnSearch[displayIndex] ?? '',
+        regex: false,
+      },
+    });
+  });
+
+  let order = [];
+  if (state.orderColumnIndex >= 0 && !state.columns[state.orderColumnIndex]?.virtual) {
+    const serverOrderIndex = toServerColumnIndex(state.columns, state.orderColumnIndex);
+    if (serverOrderIndex >= 0) {
+      order = [{ column: serverOrderIndex, dir: state.orderDirection }];
+    }
+  }
 
   return {
     draw: state.draw,
@@ -165,14 +192,52 @@ function updateSortIndicators(thead, orderColumnIndex, orderDirection) {
 }
 
 /**
+ * Apply a column render result to a table cell.
+ *
+ * @param {HTMLTableCellElement} td
+ * @param {{render?: Function, html?: boolean}} column
+ * @param {*} value
+ * @param {object} row
+ */
+function applyCellRender(td, column, value, row) {
+  if (typeof column.render !== 'function') {
+    td.textContent = value === null || value === undefined ? '' : String(value);
+    return;
+  }
+
+  const rendered = column.render(value, row, td);
+  if (rendered === null || rendered === undefined) {
+    return;
+  }
+  if (rendered instanceof Node) {
+    td.replaceChildren(rendered);
+    return;
+  }
+  if (column.html) {
+    td.innerHTML = String(rendered);
+    return;
+  }
+  td.textContent = String(rendered);
+}
+
+/**
  * Initialise a backend DataTable bound to a registered grid identifier.
  *
  * @param {string|HTMLTableElement} selector
  * @param {{
  *   gridIdentifier: string,
- *   columns: Array<{data: string, title: string, searchable?: boolean, orderable?: boolean}>,
+ *   columns: Array<{
+ *     data: string,
+ *     title: string,
+ *     searchable?: boolean,
+ *     orderable?: boolean,
+ *     virtual?: boolean,
+ *     html?: boolean,
+ *     render?: Function,
+ *   }>,
  *   pageLength?: number,
  *   searchPlaceholder?: string,
+ *   onRowsRendered?: (tbody: HTMLTableSectionElement, rows: object[]) => void,
  * }} options
  */
 export function initDataTable(selector, options) {
@@ -238,10 +303,13 @@ export function initDataTable(selector, options) {
       const tr = tbody.insertRow();
       options.columns.forEach((column) => {
         const td = tr.insertCell();
-        const value = row[column.data];
-        td.textContent = value === null || value === undefined ? '' : String(value);
+        const value = column.virtual ? undefined : row[column.data];
+        applyCellRender(td, column, value, row);
       });
     });
+    if (typeof options.onRowsRendered === 'function') {
+      options.onRowsRendered(tbody, rows);
+    }
   };
 
   const updateInfo = () => {
