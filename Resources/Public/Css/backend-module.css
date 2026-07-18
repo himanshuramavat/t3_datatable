@@ -40,11 +40,8 @@
 
 /* Card */
 .t3-datatable-module__card {
-    background: var(--t3dt-surface);
-    border: 1px solid var(--t3dt-border);
     border-radius: var(--t3dt-radius);
     box-shadow: var(--t3dt-shadow-card);
-    flex: 1;
     overflow: hidden;
 }
 

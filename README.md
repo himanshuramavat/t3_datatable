@@ -1,164 +1,130 @@
-# T3 DataTable for TYPO3
+[![Latest Stable Version](https://poser.pugx.org/hrr/t3-datatable/v/stable)](https://packagist.org/packages/hrr/t3-datatable)
+[![TYPO3 13](https://img.shields.io/badge/TYPO3-13-orange.svg)](https://get.typo3.org/version/13)
+[![TYPO3 14](https://img.shields.io/badge/TYPO3-14-orange.svg)](https://get.typo3.org/version/14)
+[![Total Downloads](https://poser.pugx.org/hrr/t3-datatable/d/total)](https://packagist.org/packages/hrr/t3-datatable)
+[![Monthly Downloads](https://poser.pugx.org/hrr/t3-datatable/d/monthly)](https://packagist.org/packages/hrr/t3-datatable)
+[![CI](https://github.com/himanshuramavat/t3_datatable/actions/workflows/ci.yml/badge.svg)](https://github.com/himanshuramavat/t3_datatable/actions/workflows/ci.yml)
+[![License](https://poser.pugx.org/hrr/t3-datatable/license)](https://packagist.org/packages/hrr/t3-datatable)
 
-### Server-side searchable, sortable & paginated data grids for TYPO3 backend modules
+# T3 DataTable
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Version-1.0.0-blue" alt="Version 1.0.0">
-  <img src="https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg" alt="License">
-  <img src="https://img.shields.io/badge/TYPO3-13,14-orange" alt="TYPO3 13-14">
-  <img src="https://img.shields.io/badge/PHP-8.2%2B-red" alt="PHP 8.2+">
-</p>
+Server-side searchable, sortable and paginated data grids for TYPO3 backend modules.
 
----
+**T3 DataTable** brings server-side data grids to custom TYPO3 backend modules
+without writing custom AJAX endpoints, SQL boilerplate, or inline JavaScript.
+It complements the core **Web → List** module (`DatabaseRecordList`); it does
+not replace TCA record lists on a page.
 
-## ✨ What is T3 DataTable?
+Register a grid, load the ES module, and render a table with `data-*`
+attributes. The extension handles request parsing, Doctrine DBAL queries,
+column allowlisting, and JSON responses compatible with the
+[DataTables server-side protocol](https://datatables.net/manual/server-side).
 
-**T3 DataTable** brings server-side **searchable, sortable, and paginated** data grids to TYPO3 backend modules — without writing custom AJAX endpoints, SQL boilerplate, or inline JavaScript.
+|                  | URL                                                              |
+|------------------|------------------------------------------------------------------|
+| **Repository:**  | https://github.com/himanshuramavat/t3_datatable                  |
+| **Read online:** | https://docs.typo3.org/p/hrr/t3-datatable/main/en-us/            |
+| **TER:**         | https://extensions.typo3.org/extension/t3_datatable/             |
+| **Packagist:**   | https://packagist.org/packages/hrr/t3-datatable                  |
+| **Issues:**      | https://github.com/himanshuramavat/t3_datatable/issues           |
 
-Register a grid, load the ES module, and render a table with `data-*` attributes. The extension handles request parsing, Doctrine DBAL queries, column allowlisting, and JSON responses compatible with the [DataTables server-side protocol](https://datatables.net/manual/server-side).
+## Features
 
----
+* Server-side search, sort, and pagination over any database table
+* Simple grid API: implement `GridInterface`, tag it, done
+* Column allowlisting before any search or sort touches the query
+* CSP-safe JavaScript bootstrap (no inline scripts)
+* TYPO3-native backend module shell (`ModuleTemplate`, card UI)
+* One shared AJAX endpoint (`t3datatable_data`) for all grids
+* PHPUnit, PHPStan, and PHP-CS-Fixer wired in
+* Standard TYPO3 documentation in `Documentation/`
 
-## 🚀 Key Features
+## Installation
 
-- 🔍 Server-side search, sort, and pagination over any database table
-- 🧩 Simple grid API — implement `GridInterface`, tag it, done
-- 🛡️ Column allowlisting before any search or sort touches the query
-- 🔒 CSP-safe JavaScript bootstrap (no inline scripts)
-- 🧱 TYPO3-native backend module shell (`ModuleTemplate`, docheader, infobox, card UI)
-- 🔌 One shared AJAX endpoint (`t3datatable_data`) for all grids
-- ✅ PHPUnit, PHPStan, and PHP-CS-Fixer wired in
-- 📚 Standard TYPO3 documentation in `Documentation/`
-
----
-
-## 📦 Installation
-
-### ➤ Composer (Packagist)
+Install via Composer:
 
 ```bash
 composer require hrr/t3-datatable
 ```
 
-🔗 https://packagist.org/users/himanshuramavat/
+Or install the extension from the
+[TYPO3 Extension Repository](https://extensions.typo3.org/extension/t3_datatable/).
 
-Then open **Admin Tools → T3 DataTable → Demo grid** to see the built-in `pages` demo.
+Then activate **T3 DataTable** in **Admin Tools → Extensions**.
 
----
+## Demo
 
-## 🧠 Quick Usage Example
+After installation open
 
-**1. Define a grid:**
+**Web → T3 DataTable**
 
-```php
-use HRR\T3Datatable\Contract\GridInterface;
-use HRR\T3Datatable\DataTable\GridDefinition;
+to see a working server-side grid using the `pages` table.
+(On TYPO3 14 the module appears under **Content → T3 DataTable**.)
 
-final class PagesGrid implements GridInterface
-{
-    public function getIdentifier(): string
-    {
-        return 'demo_pages';
-    }
+## Quick start
 
-    public function getTableName(): string
-    {
-        return 'pages';
-    }
+1. Implement `GridInterface` in your extension and tag the service with
+   `t3datatable.grid` (or rely on `_instanceof` auto-tagging).
+2. Load the ES module in your backend controller:
 
-    public function build(GridDefinition $definition): void
-    {
-        $definition
-            ->addColumn('uid', 'UID', searchable: false, orderable: true)
-            ->addColumn('title', 'Title', searchable: true, orderable: true)
-            ->addColumn('slug', 'Slug', searchable: true, orderable: true)
-            ->setDefaultOrder('uid', 'ASC')
-            ->setPageLength(10);
-    }
-}
-```
+   ```php
+   $this->pageRenderer->loadJavaScriptModule('@hrr/t3-datatable/datatable-backend.js');
+   ```
 
-**2. Tag it in your `Configuration/Services.yaml`:**
+3. Render a table with `data-*` attributes (see the demo Fluid partial
+   `Resources/Private/Partials/Module/DataTablePanel.html`), or call
+   `initDataTable()` from JavaScript.
 
-```yaml
-Vendor\MyExt\Grid\PagesGrid:
-  tags: ['t3datatable.grid']
-```
+Full step-by-step instructions are in the
+[developer documentation](https://docs.typo3.org/p/hrr/t3-datatable/main/en-us/Developer/Index.html).
 
-**3. Render the table (no inline JS — CSP-safe):**
+## Documentation
 
-```php
-// In your backend controller
-$this->pageRenderer->loadJavaScriptModule('@hrr/t3-datatable/datatable-backend.js');
-```
+https://docs.typo3.org/p/hrr/t3-datatable/main/en-us/
 
-```html
-<table data-t3-datatable="demo_pages"
-       data-columns="{columnsJson}"
-       data-page-length="10">
-    <thead>…</thead>
-    <tbody></tbody>
-</table>
-```
+## Requirements
 
-The module auto-initializes every `[data-t3-datatable]` table on `DocumentService.ready()`.
+* TYPO3 13 LTS / 14
+* PHP 8.2+
 
----
-
-## 🧰 Compatibility
+## Compatibility
 
 | TYPO3       | PHP       | Extension Version |
 | ----------- | --------- | ----------------- |
-| 13.4 – 14.3 | 8.2 – 8.4 | 1.0.0             |
+| 13.4 - 14.3 | 8.2 - 8.4 | 1.0.0             |
 
----
-
-## 🛠️ Development
+## Development
 
 From the package root:
 
 ```bash
 composer install
-composer test:all      # unit + functional
-composer stan          # PHPStan
-composer cs:check      # PHP-CS-Fixer (dry-run)
+composer ci             # cs:check + stan + unit + functional
+composer test:all       # unit + functional
+composer stan           # PHPStan
+composer cs:check       # PHP-CS-Fixer (dry-run)
 ```
 
----
+## Contributing
 
-## 🙏 Credits & Acknowledgements
+Contributions are welcome. Please read the
+[Contributing Guide](CONTRIBUTING.md) before opening a pull request.
 
-This extension was inspired by and built with help from the following projects and developers:
+## Acknowledgements
+
+This extension was inspired by and built with help from the following projects
+and developers:
 
 | Project / author | Role in `t3_datatable` |
-|------------------|------------------------|
+| ---------------- | ---------------------- |
 | **[yajra/laravel-datatables](https://github.com/yajra/laravel-datatables)** by [Arjay Angeles (yajra)](https://github.com/yajra) | Server-side DataTables protocol, grid engine concept, and query-processing patterns adapted for TYPO3 and Doctrine DBAL |
 
----
+## Authors
 
-## 👨‍💻 Author
+* [Himanshu Ramavat](https://www.linkedin.com/in/himanshu-ramavat/)
+* [Rohan Parmar](https://www.linkedin.com/in/rohanrparmar)
 
-- **[Himanshu Ramavat](https://www.linkedin.com/in/himanshu-ramavat/)** — [himanshuramavat.in](https://himanshuramavat.in) · [Packagist](https://packagist.org/users/himanshuramavat/)
+## License
 
----
-
-## 💡 Contributing
-
-Contributions are welcome and appreciated ❤️
-
-- Fork the repository
-- Create a feature branch
-- Commit your changes
-- Submit a Pull Request
-
----
-
-## 📜 License
-
-Licensed under the [GNU General Public License v2.0 or later](https://www.gnu.org/licenses/gpl-2.0.html).
-
----
-
-<p align="center">
-  <b>Made with 🧡 for the TYPO3 Developer</b>
-</p>
+Licensed under the
+[GNU General Public License v2.0 or later](https://www.gnu.org/licenses/gpl-2.0.html).

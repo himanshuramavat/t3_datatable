@@ -27,7 +27,7 @@ allowlist. Only use alphanumeric column names with dots/underscores.
 
 - Implement :php:`GridInterface` in your extension.
 - Add the ``t3datatable.grid`` tag via ``_instanceof`` in **your**
-  :file:`Services.yaml` (the tag in |extension_name| alone does not apply to
+  :file:`Services.yaml` (the tag in T3 DataTable alone does not apply to
   foreign packages).
 - Flush caches after adding a new grid class.
 
@@ -71,11 +71,12 @@ Verify searchable columns are declared with ``searchable: true``.
 Render documentation locally
 ============================
 
-From the package root (requires Docker, same as other TYPO3 extensions):
+You can preview this documentation on your own machine. You need Docker
+installed, the same as with other TYPO3 extensions. From the package root, run:
 
 .. code-block:: bash
 
    composer doc-watch
 
-Add a ``doc-watch`` script to :file:`composer.json` if you use the TYPO3
-documentation renderer image (see :file:`packages/ns_aiuniverse/composer.json`).
+This starts the official TYPO3 documentation renderer and watches for changes,
+so the pages rebuild as you edit them.

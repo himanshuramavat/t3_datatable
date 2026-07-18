@@ -16,21 +16,30 @@ T3 DataTable
    en
 
 :Author:
-   HRR
+   Himanshu Ramavat, Rohan Parmar
 
 :License:
    GPL-2.0-or-later
 
+:Repository:
+   https://github.com/himanshuramavat/t3_datatable
+
+:Issues:
+   https://github.com/himanshuramavat/t3_datatable/issues
+
 ----
 
-|extension_name| is a server-side grid engine for TYPO3 backend modules.
-Register a grid for any database table, get a secured AJAX endpoint, and render
-searchable, sortable, paginated tables in the backend without writing boilerplate SQL.
+T3 DataTable is a server-side grid engine for **custom TYPO3 backend modules**.
+Register a grid for any database table and you get a secured AJAX endpoint plus
+a searchable, sortable, and paginated table, without writing SQL boilerplate by
+hand. It complements (and does not replace) the core :guilabel:`Web > List`
+module (:php:`DatabaseRecordList`) used for TCA records on a page.
 
-This documentation is written for:
+This documentation is for two groups of people:
 
-- **Extension developers** integrating DataTable grids into backend modules.
-- **Integrators** installing and activating the package.
+- Extension developers who want to add DataTable grids to their backend
+  modules.
+- Integrators who just need to install and switch on the package.
 
 ----
 

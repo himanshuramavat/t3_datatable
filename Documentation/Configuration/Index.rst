@@ -13,18 +13,23 @@ Configuration
 Overview
 ========
 
-|extension_name| has **no global extension configuration** (no ``ext_conf_template.txt``).
-All behaviour is defined per grid via :php:`GridInterface::build()`.
+There is no global extension configuration here. T3 DataTable ships no
+``ext_conf_template.txt``, and there are no options to set in the install tool.
+You configure everything per grid inside :php:`GridInterface::build()`.
 
 Service registration
 ======================
 
-The extension registers:
+The extension ships these configuration files:
 
-- :file:`Configuration/Services.yaml` — autowiring and ``t3datatable.grid`` tag
-- :file:`Configuration/Backend/AjaxRoutes.php` — central data endpoint
-- :file:`Configuration/JavaScriptModules.php` — ES module import map
-- :file:`Configuration/Backend/Modules.php` — demo backend module only
+- :file:`Configuration/Services.yaml` sets up autowiring and the
+  ``t3datatable.grid`` tag.
+- :file:`Configuration/Backend/AjaxRoutes.php` registers the shared data
+  endpoint.
+- :file:`Configuration/JavaScriptModules.php` adds the ES module to the import
+  map.
+- :file:`Configuration/Backend/Modules.php` registers the demo backend module
+  only.
 
 Consumer extensions must add the ``_instanceof`` rule in their own
 :file:`Configuration/Services.yaml`:
