@@ -1,10 +1,7 @@
 [![Latest Stable Version](https://poser.pugx.org/hrr/t3-datatable/v/stable)](https://packagist.org/packages/hrr/t3-datatable)
 [![TYPO3 13](https://img.shields.io/badge/TYPO3-13-orange.svg)](https://get.typo3.org/version/13)
 [![TYPO3 14](https://img.shields.io/badge/TYPO3-14-orange.svg)](https://get.typo3.org/version/14)
-[![Total Downloads](https://poser.pugx.org/hrr/t3-datatable/d/total)](https://packagist.org/packages/hrr/t3-datatable)
-[![Monthly Downloads](https://poser.pugx.org/hrr/t3-datatable/d/monthly)](https://packagist.org/packages/hrr/t3-datatable)
 [![CI](https://github.com/himanshuramavat/t3_datatable/actions/workflows/ci.yml/badge.svg)](https://github.com/himanshuramavat/t3_datatable/actions/workflows/ci.yml)
-[![License](https://poser.pugx.org/hrr/t3-datatable/license)](https://packagist.org/packages/hrr/t3-datatable)
 
 # T3 DataTable
 

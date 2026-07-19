@@ -30,6 +30,12 @@
         "search",
         "doctrine-dbal"
     ],
+    "homepage": "https://github.com/himanshuramavat/t3_datatable",
+    "support": {
+        "issues": "https://github.com/himanshuramavat/t3_datatable/issues",
+        "source": "https://github.com/himanshuramavat/t3_datatable",
+        "docs": "https://docs.typo3.org/p/hrr/t3-datatable/main/en-us/"
+    },
     "require": {
         "php": ">=8.2 <9",
         "typo3/cms-backend": "^13.4 || ^14.3",
@@ -51,6 +57,7 @@
     },
     "config": {
         "vendor-dir": ".Build/vendor",
+        "optimize-autoloader": true,
         "bin-dir": ".Build/bin",
         "sort-packages": true,
         "platform": {
@@ -64,7 +71,11 @@
     "extra": {
         "typo3/cms": {
             "web-dir": ".Build/public",
-            "extension-key": "t3_datatable"
+            "extension-key": "t3_datatable",
+            "Package": {
+                "providesPackages": []
+            },
+            "version": "1.0.0"
         }
     },
     "scripts": {
