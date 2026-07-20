@@ -40,13 +40,35 @@ Architecture
 
 .. code-block:: text
 
-   Consumer extension (GridInterface)
-        ↓ tagged t3datatable.grid
-   GridRegistry
-        ↓
-   DataTableController (AJAX)
-        ↓
-   DataTableRequest → QueryEngine → JsonResponse
+   ┌─────────────────────────────────────┐
+   │  Consumer extension (GridInterface)  │
+   └───────────────────┬───────────────────┘
+                        │ tagged: t3datatable.grid
+                        ▼
+   ┌─────────────────────────────────────┐
+   │            GridRegistry              │
+   └───────────────────┬───────────────────┘
+                        │ resolves grid config
+                        ▼
+   ┌─────────────────────────────────────┐
+   │     DataTableController (AJAX)       │
+   └───────────────────┬───────────────────┘
+                        │ builds request
+                        ▼
+   ┌─────────────────────────────────────┐
+   │          DataTableRequest            │
+   └───────────────────┬───────────────────┘
+                        │ passed to
+                        ▼
+   ┌─────────────────────────────────────┐
+   │             QueryEngine              │
+   └───────────────────┬───────────────────┘
+                        │ executes & maps results
+                        ▼
+   ┌─────────────────────────────────────┐
+   │             JsonResponse             │
+   └───────────────────────────────────────┘
+
 
 The bundled ES module :js:`@hrr/t3-datatable/datatable-backend.js` talks to that
 endpoint using TYPO3's own :js:`@typo3/core/ajax/ajax-request`, so it works in
