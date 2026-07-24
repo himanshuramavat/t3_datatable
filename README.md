@@ -2,7 +2,7 @@
 [![TYPO3 13](https://img.shields.io/badge/TYPO3-13-orange.svg)](https://get.typo3.org/version/13)
 [![TYPO3 14](https://img.shields.io/badge/TYPO3-14-orange.svg)](https://get.typo3.org/version/14)
 [![CI](https://github.com/himanshuramavat/t3_datatable/actions/workflows/ci.yml/badge.svg)](https://github.com/himanshuramavat/t3_datatable/actions/workflows/ci.yml)
-
+[![Crowdin](https://badges.crowdin.net/typo3-extension-t3datatable/localized.svg)](https://crowdin.com/project/typo3-extension-t3datatable)
 # T3 DataTable
 
 Server-side searchable, sortable and paginated data grids for TYPO3 backend modules.
