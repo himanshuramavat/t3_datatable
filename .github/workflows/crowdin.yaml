@@ -7,9 +7,6 @@ on:
     paths:
       - '**.xlf'
 
-permissions:
-  contents: read
-
 jobs:
   sync:
     name: Synchronize with Crowdin
