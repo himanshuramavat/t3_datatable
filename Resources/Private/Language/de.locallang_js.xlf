@@ -3,25 +3,25 @@
   <file source-language="en" datatype="plaintext" original="messages" product-name="t3_datatable" target-language="de">
     <header/>
     <body>
-      <trans-unit id="search.placeholder">
+      <trans-unit id="search.placeholder" approved="yes">
         <source>Search records</source>
-        <target state="needs-translation">Search records</target>
+        <target state="final">Datensätze suchen</target>
       </trans-unit>
-      <trans-unit id="length.label">
+      <trans-unit id="length.label" approved="yes">
         <source>Show</source>
-        <target state="needs-translation">Show</target>
+        <target state="final">Zeigen</target>
       </trans-unit>
-      <trans-unit id="pagination.previous">
+      <trans-unit id="pagination.previous" approved="yes">
         <source>Previous</source>
-        <target state="needs-translation">Previous</target>
+        <target state="final">Vorherige</target>
       </trans-unit>
-      <trans-unit id="pagination.next">
+      <trans-unit id="pagination.next" approved="yes">
         <source>Next</source>
-        <target state="needs-translation">Next</target>
+        <target state="final">Nächste</target>
       </trans-unit>
-      <trans-unit id="pagination.range">
+      <trans-unit id="pagination.range" approved="yes">
         <source>%1$s-%2$s of %3$s</source>
-        <target state="needs-translation">%1$s-%2$s of %3$s</target>
+        <target state="final">%1$s-%2$s von %3$s</target>
       </trans-unit>
     </body>
   </file>
