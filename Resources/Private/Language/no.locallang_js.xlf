@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages" product-name="t3_datatable" target-language="no">
+    <header/>
+    <body>
+      <trans-unit id="search.placeholder">
+        <source>Search records</source>
+        <target state="needs-translation">Search records</target>
+      </trans-unit>
+      <trans-unit id="length.label">
+        <source>Show</source>
+        <target state="needs-translation">Show</target>
+      </trans-unit>
+      <trans-unit id="pagination.previous">
+        <source>Previous</source>
+        <target state="needs-translation">Previous</target>
+      </trans-unit>
+      <trans-unit id="pagination.next">
+        <source>Next</source>
+        <target state="needs-translation">Next</target>
+      </trans-unit>
+      <trans-unit id="pagination.range">
+        <source>%1$s-%2$s of %3$s</source>
+        <target state="needs-translation">%1$s-%2$s of %3$s</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
