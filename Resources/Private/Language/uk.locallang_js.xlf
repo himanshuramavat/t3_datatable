@@ -21,7 +21,7 @@
       </trans-unit>
       <trans-unit id="pagination.range">
         <source>%1$s-%2$s of %3$s</source>
-        <target state="needs-translation">%1$s-%2$s of %3$s</target>
+        <target state="translated">%1$s-%2$s з %3$s</target>
       </trans-unit>
     </body>
   </file>
