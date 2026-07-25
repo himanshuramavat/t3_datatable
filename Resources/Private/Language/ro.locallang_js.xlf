@@ -9,7 +9,7 @@
       </trans-unit>
       <trans-unit id="length.label">
         <source>Show</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Afișare</target>
+        <target state="translated">Afișează</target>
       </trans-unit>
       <trans-unit id="pagination.previous">
         <source>Previous</source>
@@ -17,7 +17,7 @@
       </trans-unit>
       <trans-unit id="pagination.next">
         <source>Next</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Următoarea</target>
+        <target state="translated">Următor</target>
       </trans-unit>
       <trans-unit id="pagination.range">
         <source>%1$s-%2$s of %3$s</source>
