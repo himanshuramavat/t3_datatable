@@ -5,23 +5,23 @@
     <body>
       <trans-unit id="search.placeholder">
         <source>Search records</source>
-        <target state="needs-translation">Search records</target>
+        <target state="translated">Pretraži zapise</target>
       </trans-unit>
       <trans-unit id="length.label">
         <source>Show</source>
-        <target state="needs-translation">Show</target>
+        <target state="translated">Prikaži</target>
       </trans-unit>
       <trans-unit id="pagination.previous">
         <source>Previous</source>
-        <target state="needs-translation">Previous</target>
+        <target state="translated">Prethodno</target>
       </trans-unit>
       <trans-unit id="pagination.next">
         <source>Next</source>
-        <target state="needs-translation">Next</target>
+        <target state="translated">Sledeće</target>
       </trans-unit>
       <trans-unit id="pagination.range">
         <source>%1$s-%2$s of %3$s</source>
-        <target state="needs-translation">%1$s-%2$s of %3$s</target>
+        <target state="translated">%1$s-%2$s od %3$s</target>
       </trans-unit>
     </body>
   </file>
