@@ -5,75 +5,75 @@
     <body>
       <trans-unit id="mlang_tabs_tab">
         <source>T3 DataTable</source>
-        <target state="needs-translation">T3 DataTable</target>
+        <target state="translated">T3 DataTable</target>
       </trans-unit>
       <trans-unit id="mlang_labels_tablabel">
         <source>T3 DataTable</source>
-        <target state="needs-translation">T3 DataTable</target>
+        <target state="translated">T3 DataTable</target>
       </trans-unit>
       <trans-unit id="mlang_labels_tabdescr">
         <source>Pages listed via the T3 DataTable engine.</source>
-        <target state="needs-translation">Pages listed via the T3 DataTable engine.</target>
+        <target state="translated">Stranice prikazane putem T3 DataTable mehanizma.</target>
       </trans-unit>
       <trans-unit id="module.demo.title">
         <source>Demo grid</source>
-        <target state="needs-translation">Demo grid</target>
+        <target state="translated">Demo mreža</target>
       </trans-unit>
       <trans-unit id="module.demo.subtitle">
         <source>Server-side search, sort, and pagination for TYPO3 backend modules.</source>
-        <target state="needs-translation">Server-side search, sort, and pagination for TYPO3 backend modules.</target>
+        <target state="translated">Pretraga, sortiranje i straničenje na strani servera za TYPO3 pozadinske module.</target>
       </trans-unit>
       <trans-unit id="module.demo.refresh">
         <source>Refresh</source>
-        <target state="needs-translation">Refresh</target>
+        <target state="translated">Osveži</target>
       </trans-unit>
       <trans-unit id="module.demo.infobox.title">
         <source>Server-side DataTable</source>
-        <target state="needs-translation">Server-side DataTable</target>
+        <target state="translated">DataTabela na strani servera</target>
       </trans-unit>
       <trans-unit id="module.demo.infobox.message">
         <source>This module demonstrates the shared AJAX endpoint, column allowlisting, and CSP-safe JavaScript bootstrap using TYPO3 pages.</source>
-        <target state="needs-translation">This module demonstrates the shared AJAX endpoint, column allowlisting, and CSP-safe JavaScript bootstrap using TYPO3 pages.</target>
+        <target state="translated">Ovaj modul demonstrira deljenu AJAX krajnju tačku, belu listu kolona i CSP-bezbedno JavaScript pokretanje koristeći TYPO3 stranice.</target>
       </trans-unit>
       <trans-unit id="module.demo.note.close">
         <source>Dismiss note</source>
-        <target state="needs-translation">Dismiss note</target>
+        <target state="translated">Odbaci napomenu</target>
       </trans-unit>
       <trans-unit id="module.demo.meta.grid">
         <source>Grid</source>
-        <target state="needs-translation">Grid</target>
+        <target state="translated">Mreža</target>
       </trans-unit>
       <trans-unit id="module.demo.meta.table">
         <source>Table</source>
-        <target state="needs-translation">Table</target>
+        <target state="translated">Tabela</target>
       </trans-unit>
       <trans-unit id="module.demo.meta.pageLength">
         <source>Page size</source>
-        <target state="needs-translation">Page size</target>
+        <target state="translated">Veličina stranice</target>
       </trans-unit>
       <trans-unit id="module.demo.card.title">
         <source>Pages</source>
-        <target state="needs-translation">Pages</target>
+        <target state="translated">Stranice</target>
       </trans-unit>
       <trans-unit id="module.demo.card.subtitle">
         <source>Server-side search, sort, and pagination — change page size in the toolbar below.</source>
-        <target state="needs-translation">Server-side search, sort, and pagination — change page size in the toolbar below.</target>
+        <target state="translated">Pretraga, sortiranje i straničenje na strani servera — promenite veličinu stranice na traci ispod.</target>
       </trans-unit>
       <trans-unit id="module.demo.chips.label">
         <source>Grid configuration</source>
-        <target state="needs-translation">Grid configuration</target>
+        <target state="translated">Konfiguracija mreže</target>
       </trans-unit>
       <trans-unit id="module.demo.footer.made_with">
         <source>Made with 🧡 for TYPO3 developers by</source>
-        <target state="needs-translation">Made with 🧡 for TYPO3 developers by</target>
+        <target state="translated">Napravljeno sa 🧡 za TYPO3 programere od strane</target>
       </trans-unit>
       <trans-unit id="module.demo.footer.packagist">
         <source>Packagist</source>
-        <target state="needs-translation">Packagist</target>
+        <target state="translated">Packagist</target>
       </trans-unit>
       <trans-unit id="module.demo.footer.protocol">
         <source>DataTables protocol</source>
-        <target state="needs-translation">DataTables protocol</target>
+        <target state="translated">DataTables protokol</target>
       </trans-unit>
     </body>
   </file>
