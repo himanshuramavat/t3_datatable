@@ -5,39 +5,39 @@
     <body>
       <trans-unit id="mlang_tabs_tab">
         <source>T3 DataTable</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">T3 DataTabel</target>
+        <target state="translated">T3 DataTable</target>
       </trans-unit>
       <trans-unit id="mlang_labels_tablabel">
         <source>T3 DataTable</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">T3 DataTabel</target>
+        <target state="translated">T3 DataTable</target>
       </trans-unit>
       <trans-unit id="mlang_labels_tabdescr">
         <source>Pages listed via the T3 DataTable engine.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Pagini listate prin motorul T3 Datatable.</target>
+        <target state="translated">Pagini listate prin motorul T3 DataTable.</target>
       </trans-unit>
       <trans-unit id="module.demo.title">
         <source>Demo grid</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Grilă demonstrativă</target>
+        <target state="translated">Grilă demo</target>
       </trans-unit>
       <trans-unit id="module.demo.subtitle">
         <source>Server-side search, sort, and pagination for TYPO3 backend modules.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Căutarea, sortarea şi paginarea serverului pentru modulele backend TYPO3.</target>
+        <target state="translated">Căutare, sortare și paginare server-side pentru modulele backend TYPO3.</target>
       </trans-unit>
       <trans-unit id="module.demo.refresh">
         <source>Refresh</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Împrospătează</target>
+        <target state="translated">Reîmprospătare</target>
       </trans-unit>
       <trans-unit id="module.demo.infobox.title">
         <source>Server-side DataTable</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Date pe partea serverului</target>
+        <target state="translated">DataTable server-side</target>
       </trans-unit>
       <trans-unit id="module.demo.infobox.message">
         <source>This module demonstrates the shared AJAX endpoint, column allowlisting, and CSP-safe JavaScript bootstrap using TYPO3 pages.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Acest modul demonstrează criteriul final partajat AJAX, coloana care permite listarea, și bootstrap cu siguranță în JavaScript folosind pagini TYPO3.</target>
+        <target state="translated">Acest modul demonstrează endpoint-ul AJAX partajat, lista albă a coloanelor și bootstrap JavaScript sigur CSP folosind pagini TYPO3.</target>
       </trans-unit>
       <trans-unit id="module.demo.note.close">
         <source>Dismiss note</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Renunțați la notă</target>
+        <target state="translated">Închide notă</target>
       </trans-unit>
       <trans-unit id="module.demo.meta.grid">
         <source>Grid</source>
@@ -49,7 +49,7 @@
       </trans-unit>
       <trans-unit id="module.demo.meta.pageLength">
         <source>Page size</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Dimensiunea paginii</target>
+        <target state="translated">Dimensiune pagină</target>
       </trans-unit>
       <trans-unit id="module.demo.card.title">
         <source>Pages</source>
@@ -57,7 +57,7 @@
       </trans-unit>
       <trans-unit id="module.demo.card.subtitle">
         <source>Server-side search, sort, and pagination — change page size in the toolbar below.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Căutare pe partea serverului, sortare și paginare - schimbă dimensiunea paginii în bara de instrumente de mai jos.</target>
+        <target state="translated">Căutare, sortare și paginare server-side — modificați dimensiunea paginii în bara de instrumente de mai jos.</target>
       </trans-unit>
       <trans-unit id="module.demo.chips.label">
         <source>Grid configuration</source>
@@ -65,15 +65,15 @@
       </trans-unit>
       <trans-unit id="module.demo.footer.made_with">
         <source>Made with 🧡 for TYPO3 developers by</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Făcut cu 🧡 pentru dezvoltatorii TYPO3 de</target>
+        <target state="translated">Realizat cu 🧡 pentru dezvoltatorii TYPO3 de</target>
       </trans-unit>
       <trans-unit id="module.demo.footer.packagist">
         <source>Packagist</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Pachet</target>
+        <target state="translated">Packagist</target>
       </trans-unit>
       <trans-unit id="module.demo.footer.protocol">
         <source>DataTables protocol</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">DataTables protocol</target>
+        <target state="translated">Protocol DataTables</target>
       </trans-unit>
     </body>
   </file>
