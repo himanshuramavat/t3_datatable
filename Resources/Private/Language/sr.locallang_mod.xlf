@@ -5,15 +5,15 @@
     <body>
       <trans-unit id="mlang_tabs_tab">
         <source>T3 DataTable</source>
-        <target state="needs-translation">T3 DataTable</target>
+        <target state="translated">T3 DataTable</target>
       </trans-unit>
       <trans-unit id="mlang_labels_tablabel">
         <source>T3 DataTable</source>
-        <target state="needs-translation">T3 DataTable</target>
+        <target state="translated">T3 DataTable</target>
       </trans-unit>
       <trans-unit id="mlang_labels_tabdescr">
         <source>Server-side DataTables for TYPO3 backend modules.</source>
-        <target state="needs-translation">Server-side DataTables for TYPO3 backend modules.</target>
+        <target state="translated">DataTabele na strani servera za TYPO3 pozadinske module.</target>
       </trans-unit>
     </body>
   </file>
