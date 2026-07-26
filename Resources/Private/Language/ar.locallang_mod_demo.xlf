@@ -3,77 +3,77 @@
   <file source-language="en" datatype="plaintext" original="messages" product-name="t3_datatable" target-language="ar">
     <header/>
     <body>
-      <trans-unit id="mlang_tabs_tab">
+      <trans-unit id="mlang_tabs_tab" approved="yes">
         <source>T3 DataTable</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">جدول بيانات T3</target>
+        <target state="final">جدول بيانات T3</target>
       </trans-unit>
-      <trans-unit id="mlang_labels_tablabel">
+      <trans-unit id="mlang_labels_tablabel" approved="yes">
         <source>T3 DataTable</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">جدول بيانات T3</target>
+        <target state="final">جدول بيانات T3</target>
       </trans-unit>
-      <trans-unit id="mlang_labels_tabdescr">
+      <trans-unit id="mlang_labels_tabdescr" approved="yes">
         <source>Pages listed via the T3 DataTable engine.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">الصفحات المدرجة عبر محرك جدول البيانات T3.</target>
+        <target state="final">الصفحات المدرجة عبر محرك جدول البيانات T3.</target>
       </trans-unit>
-      <trans-unit id="module.demo.title">
+      <trans-unit id="module.demo.title" approved="yes">
         <source>Demo grid</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">شبكة تجريبية</target>
+        <target state="final">شبكة تجريبية</target>
       </trans-unit>
-      <trans-unit id="module.demo.subtitle">
+      <trans-unit id="module.demo.subtitle" approved="yes">
         <source>Server-side search, sort, and pagination for TYPO3 backend modules.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">بحث على جانب الخادم، فرز، وتصفيف الصفحات لوحدات TYPO3.</target>
+        <target state="final">بحث على جانب الخادم، فرز، وتصفيف الصفحات لوحدات TYPO3.</target>
       </trans-unit>
-      <trans-unit id="module.demo.refresh">
+      <trans-unit id="module.demo.refresh" approved="yes">
         <source>Refresh</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">تحديث</target>
+        <target state="final">تحديث</target>
       </trans-unit>
-      <trans-unit id="module.demo.infobox.title">
+      <trans-unit id="module.demo.infobox.title" approved="yes">
         <source>Server-side DataTable</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">جدول البيانات على جانب الخادم</target>
+        <target state="final">جدول البيانات على جانب الخادم</target>
       </trans-unit>
-      <trans-unit id="module.demo.infobox.message">
+      <trans-unit id="module.demo.infobox.message" approved="yes">
         <source>This module demonstrates the shared AJAX endpoint, column allowlisting, and CSP-safe JavaScript bootstrap using TYPO3 pages.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">هذه الوحدة تظهر نقطة نهاية AJAX المشتركة، العمود المسموح بقوائم، و CSP الآمن JavaScript bootstrap باستخدام صفحات TYPO3.</target>
+        <target state="final">هذه الوحدة تظهر نقطة نهاية AJAX المشتركة، العمود المسموح بقوائم، و CSP الآمن JavaScript bootstrap باستخدام صفحات TYPO3.</target>
       </trans-unit>
-      <trans-unit id="module.demo.note.close">
+      <trans-unit id="module.demo.note.close" approved="yes">
         <source>Dismiss note</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">تجاهل الملاحظة</target>
+        <target state="final">تجاهل الملاحظة</target>
       </trans-unit>
-      <trans-unit id="module.demo.meta.grid">
+      <trans-unit id="module.demo.meta.grid" approved="yes">
         <source>Grid</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">الشبكة</target>
+        <target state="final">الشبكة</target>
       </trans-unit>
-      <trans-unit id="module.demo.meta.table">
+      <trans-unit id="module.demo.meta.table" approved="yes">
         <source>Table</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">الجدول</target>
+        <target state="final">الجدول</target>
       </trans-unit>
-      <trans-unit id="module.demo.meta.pageLength">
+      <trans-unit id="module.demo.meta.pageLength" approved="yes">
         <source>Page size</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">حجم الصفحة</target>
+        <target state="final">حجم الصفحة</target>
       </trans-unit>
-      <trans-unit id="module.demo.card.title">
+      <trans-unit id="module.demo.card.title" approved="yes">
         <source>Pages</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">الصفحات</target>
+        <target state="final">الصفحات</target>
       </trans-unit>
-      <trans-unit id="module.demo.card.subtitle">
+      <trans-unit id="module.demo.card.subtitle" approved="yes">
         <source>Server-side search, sort, and pagination — change page size in the toolbar below.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">البحث على جانب الخادم، الفرز، وتقسيم الصفحات - تغيير حجم الصفحة في شريط الأدوات أدناه.</target>
+        <target state="final">البحث على جانب الخادم، الفرز، وتقسيم الصفحات - تغيير حجم الصفحة في شريط الأدوات أدناه.</target>
       </trans-unit>
-      <trans-unit id="module.demo.chips.label">
+      <trans-unit id="module.demo.chips.label" approved="yes">
         <source>Grid configuration</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">تكوين الشبكة</target>
+        <target state="final">تكوين الشبكة</target>
       </trans-unit>
-      <trans-unit id="module.demo.footer.made_with">
+      <trans-unit id="module.demo.footer.made_with" approved="yes">
         <source>Made with 🧡 for TYPO3 developers by</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">صنع مع 🧡 لمطوري TYPO3 بواسطة</target>
+        <target state="final">صنع مع 🧡 لمطوري TYPO3 بواسطة</target>
       </trans-unit>
-      <trans-unit id="module.demo.footer.packagist">
+      <trans-unit id="module.demo.footer.packagist" approved="yes">
         <source>Packagist</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">حزمة</target>
+        <target state="final">حزمة</target>
       </trans-unit>
-      <trans-unit id="module.demo.footer.protocol">
+      <trans-unit id="module.demo.footer.protocol" approved="yes">
         <source>DataTables protocol</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">DataTables protocol</target>
+        <target state="final">DataTables protocol</target>
       </trans-unit>
     </body>
   </file>
