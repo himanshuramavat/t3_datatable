@@ -3,25 +3,25 @@
   <file source-language="en" datatype="plaintext" original="messages" product-name="t3_datatable" target-language="no">
     <header/>
     <body>
-      <trans-unit id="search.placeholder">
+      <trans-unit id="search.placeholder" approved="yes">
         <source>Search records</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Søk i poster</target>
+        <target state="final">Søk i poster</target>
       </trans-unit>
-      <trans-unit id="length.label">
+      <trans-unit id="length.label" approved="yes">
         <source>Show</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Vis</target>
+        <target state="final">Vis</target>
       </trans-unit>
-      <trans-unit id="pagination.previous">
+      <trans-unit id="pagination.previous" approved="yes">
         <source>Previous</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Forrige</target>
+        <target state="final">Forrige</target>
       </trans-unit>
-      <trans-unit id="pagination.next">
+      <trans-unit id="pagination.next" approved="yes">
         <source>Next</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Neste</target>
+        <target state="final">Neste</target>
       </trans-unit>
-      <trans-unit id="pagination.range">
+      <trans-unit id="pagination.range" approved="yes">
         <source>%1$s-%2$s of %3$s</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">%1$s–%2$s av %3$s</target>
+        <target state="final">%1$s–%2$s av %3$s</target>
       </trans-unit>
     </body>
   </file>
