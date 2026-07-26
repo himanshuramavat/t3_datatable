@@ -3,77 +3,77 @@
   <file source-language="en" datatype="plaintext" original="messages" product-name="t3_datatable" target-language="sv-SE">
     <header/>
     <body>
-      <trans-unit id="mlang_tabs_tab">
+      <trans-unit id="mlang_tabs_tab" approved="yes">
         <source>T3 DataTable</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">T3 Datatabell</target>
+        <target state="final">T3 Datatabell</target>
       </trans-unit>
-      <trans-unit id="mlang_labels_tablabel">
+      <trans-unit id="mlang_labels_tablabel" approved="yes">
         <source>T3 DataTable</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">T3 Datatabell</target>
+        <target state="final">T3 Datatabell</target>
       </trans-unit>
-      <trans-unit id="mlang_labels_tabdescr">
+      <trans-unit id="mlang_labels_tabdescr" approved="yes">
         <source>Pages listed via the T3 DataTable engine.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Sidor som listas via T3 DataTable motorn.</target>
+        <target state="final">Sidor som listas via T3 DataTable motorn.</target>
       </trans-unit>
-      <trans-unit id="module.demo.title">
+      <trans-unit id="module.demo.title" approved="yes">
         <source>Demo grid</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Demo rutnät</target>
+        <target state="final">Demo rutnät</target>
       </trans-unit>
-      <trans-unit id="module.demo.subtitle">
+      <trans-unit id="module.demo.subtitle" approved="yes">
         <source>Server-side search, sort, and pagination for TYPO3 backend modules.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Server-side sökning, sortering och sidnumrering för TYPO3 backend moduler.</target>
+        <target state="final">Server-side sökning, sortering och sidnumrering för TYPO3 backend moduler.</target>
       </trans-unit>
-      <trans-unit id="module.demo.refresh">
+      <trans-unit id="module.demo.refresh" approved="yes">
         <source>Refresh</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Uppdatera</target>
+        <target state="final">Uppdatera</target>
       </trans-unit>
-      <trans-unit id="module.demo.infobox.title">
+      <trans-unit id="module.demo.infobox.title" approved="yes">
         <source>Server-side DataTable</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Datatabell för serversidan</target>
+        <target state="final">Datatabell för serversidan</target>
       </trans-unit>
-      <trans-unit id="module.demo.infobox.message">
+      <trans-unit id="module.demo.infobox.message" approved="yes">
         <source>This module demonstrates the shared AJAX endpoint, column allowlisting, and CSP-safe JavaScript bootstrap using TYPO3 pages.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Modulen visar den delade AJAX-slutpunkten, kolumntillåten listning och CSP-safe JavaScript bootstrap med hjälp av TYPO3 sidor.</target>
+        <target state="final">Modulen visar den delade AJAX-slutpunkten, kolumntillåten listning och CSP-safe JavaScript bootstrap med hjälp av TYPO3 sidor.</target>
       </trans-unit>
-      <trans-unit id="module.demo.note.close">
+      <trans-unit id="module.demo.note.close" approved="yes">
         <source>Dismiss note</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Avfärda anteckning</target>
+        <target state="final">Avfärda anteckning</target>
       </trans-unit>
-      <trans-unit id="module.demo.meta.grid">
+      <trans-unit id="module.demo.meta.grid" approved="yes">
         <source>Grid</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Rutnät</target>
+        <target state="final">Rutnät</target>
       </trans-unit>
-      <trans-unit id="module.demo.meta.table">
+      <trans-unit id="module.demo.meta.table" approved="yes">
         <source>Table</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Tabell</target>
+        <target state="final">Tabell</target>
       </trans-unit>
-      <trans-unit id="module.demo.meta.pageLength">
+      <trans-unit id="module.demo.meta.pageLength" approved="yes">
         <source>Page size</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Sidans storlek</target>
+        <target state="final">Sidans storlek</target>
       </trans-unit>
-      <trans-unit id="module.demo.card.title">
+      <trans-unit id="module.demo.card.title" approved="yes">
         <source>Pages</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Sidor</target>
+        <target state="final">Sidor</target>
       </trans-unit>
-      <trans-unit id="module.demo.card.subtitle">
+      <trans-unit id="module.demo.card.subtitle" approved="yes">
         <source>Server-side search, sort, and pagination — change page size in the toolbar below.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Server-side sökning, sortera, och sidnumrering — ändra sidstorlek i verktygsfältet nedan.</target>
+        <target state="final">Server-side sökning, sortera, och sidnumrering — ändra sidstorlek i verktygsfältet nedan.</target>
       </trans-unit>
-      <trans-unit id="module.demo.chips.label">
+      <trans-unit id="module.demo.chips.label" approved="yes">
         <source>Grid configuration</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Grid konfiguration</target>
+        <target state="final">Grid konfiguration</target>
       </trans-unit>
-      <trans-unit id="module.demo.footer.made_with">
+      <trans-unit id="module.demo.footer.made_with" approved="yes">
         <source>Made with 🧡 for TYPO3 developers by</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Gjord med 🧡 för TYPO3 utvecklare av</target>
+        <target state="final">Gjord med 🧡 för TYPO3 utvecklare av</target>
       </trans-unit>
-      <trans-unit id="module.demo.footer.packagist">
+      <trans-unit id="module.demo.footer.packagist" approved="yes">
         <source>Packagist</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Paketledare</target>
+        <target state="final">Paketledare</target>
       </trans-unit>
-      <trans-unit id="module.demo.footer.protocol">
+      <trans-unit id="module.demo.footer.protocol" approved="yes">
         <source>DataTables protocol</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">DataTables protocol</target>
+        <target state="final">DataTables protocol</target>
       </trans-unit>
     </body>
   </file>
