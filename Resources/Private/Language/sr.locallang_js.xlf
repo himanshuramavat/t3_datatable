@@ -3,25 +3,25 @@
   <file source-language="en" datatype="plaintext" original="messages" product-name="t3_datatable" target-language="sr">
     <header/>
     <body>
-      <trans-unit id="search.placeholder">
+      <trans-unit id="search.placeholder" approved="yes">
         <source>Search records</source>
-        <target state="translated">Pretraži zapise</target>
+        <target state="final">Pretraži zapise</target>
       </trans-unit>
-      <trans-unit id="length.label">
+      <trans-unit id="length.label" approved="yes">
         <source>Show</source>
-        <target state="translated">Prikaži</target>
+        <target state="final">Prikaži</target>
       </trans-unit>
-      <trans-unit id="pagination.previous">
+      <trans-unit id="pagination.previous" approved="yes">
         <source>Previous</source>
-        <target state="translated">Prethodno</target>
+        <target state="final">Prethodno</target>
       </trans-unit>
-      <trans-unit id="pagination.next">
+      <trans-unit id="pagination.next" approved="yes">
         <source>Next</source>
-        <target state="translated">Sledeće</target>
+        <target state="final">Sledeće</target>
       </trans-unit>
-      <trans-unit id="pagination.range">
+      <trans-unit id="pagination.range" approved="yes">
         <source>%1$s-%2$s of %3$s</source>
-        <target state="translated">%1$s-%2$s od %3$s</target>
+        <target state="final">%1$s-%2$s od %3$s</target>
       </trans-unit>
     </body>
   </file>
