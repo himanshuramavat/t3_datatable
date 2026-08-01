@@ -88,7 +88,7 @@ https://docs.typo3.org/p/hrr/t3-datatable/main/en-us/
 
 | TYPO3       | PHP       | Extension Version |
 | ----------- | --------- | ----------------- |
-| 13.4 - 14.3 | 8.2 - 8.4 | 1.0.0             |
+| 13.4 - 14.3 | 8.2 - 8.4 | 2.0.0             |
 
 ## Development
 

@@ -14,6 +14,8 @@ use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 
 /**
  * Doctrine DBAL query engine for server-side DataTables processing.
+ *
+ * @internal
  */
 final class QueryEngine
 {
@@ -42,10 +44,10 @@ final class QueryEngine
         $dataQb = $this->createBaseQueryBuilder($tableName, $definition);
         $this->applySearch($dataQb, $definition, $request, $allowlist);
         $this->applyOrdering($dataQb, $definition, $request, $allowlist);
-        $this->applyPagination($dataQb, $request);
+        $this->applyPagination($dataQb, $definition, $request);
 
         $selectFields = array_map(
-            static fn ($column) => $column->name,
+            static fn ($column) => $dataQb->quoteIdentifier($column->name),
             $definition->getColumns(),
         );
         if ($selectFields !== []) {
@@ -84,7 +86,7 @@ final class QueryEngine
     {
         $qb = $this->connectionPool->getQueryBuilderForTable($tableName);
         $qb->getRestrictions()->removeAll();
-        $qb->from($tableName);
+        $qb->from($qb->quoteIdentifier($tableName));
 
         if ($definition->appliesDeletedRestriction()) {
             $qb->andWhere(
@@ -107,14 +109,14 @@ final class QueryEngine
         ColumnAllowlist $allowlist,
     ): void {
         if ($request->globalSearch !== '') {
-            $keyword = '%' . mb_strtolower($request->globalSearch) . '%';
+            $keyword = $this->createLikeKeyword($request->globalSearch);
             $or = [];
             foreach ($definition->getSearchableColumnNames() as $column) {
                 $allowlist->assertSearchable($column);
                 $or[] = $qb->expr()->comparison(
                     'LOWER(' . $qb->quoteIdentifier($column) . ')',
                     'LIKE',
-                    $qb->createNamedParameter($keyword),
+                    $qb->createNamedParameter($keyword) . " ESCAPE '!'",
                 );
             }
             if ($or !== []) {
@@ -131,12 +133,12 @@ final class QueryEngine
                 continue;
             }
             $allowlist->assertSearchable($name);
-            $keyword = '%' . mb_strtolower($column['searchValue']) . '%';
+            $keyword = $this->createLikeKeyword($column['searchValue']);
             $qb->andWhere(
                 $qb->expr()->comparison(
                     'LOWER(' . $qb->quoteIdentifier($name) . ')',
                     'LIKE',
-                    $qb->createNamedParameter($keyword),
+                    $qb->createNamedParameter($keyword) . " ESCAPE '!'",
                 ),
             );
         }
@@ -148,28 +150,33 @@ final class QueryEngine
         DataTableRequest $request,
         ColumnAllowlist $allowlist,
     ): void {
-        $orderColumn = $request->resolveOrderColumnName();
-        $orderDirection = $request->resolveOrderDirection();
-
-        if ($orderColumn === null) {
-            $orderColumn = $definition->getDefaultOrderColumn();
-            $orderDirection = $definition->getDefaultOrderDirection();
+        $orderings = $request->resolveOrderings();
+        if ($orderings === []) {
+            $defaultOrderColumn = $definition->getDefaultOrderColumn();
+            if ($defaultOrderColumn === null) {
+                return;
+            }
+            $orderings[] = [
+                'name' => $defaultOrderColumn,
+                'direction' => $definition->getDefaultOrderDirection(),
+            ];
         }
 
-        if ($orderColumn === null) {
-            return;
+        foreach ($orderings as $ordering) {
+            $allowlist->assertOrderable($ordering['name']);
+            $qb->addOrderBy($qb->quoteIdentifier($ordering['name']), $ordering['direction']);
         }
-
-        $allowlist->assertOrderable($orderColumn);
-        $qb->orderBy($orderColumn, $orderDirection);
     }
 
-    private function applyPagination(QueryBuilder $qb, DataTableRequest $request): void
+    private function applyPagination(QueryBuilder $qb, GridDefinition $definition, DataTableRequest $request): void
     {
-        if ($request->length > 0) {
-            $qb->setFirstResult($request->start);
-            $qb->setMaxResults($request->length);
-        }
+        $qb->setFirstResult($request->start);
+        $qb->setMaxResults(min($request->length, $definition->getMaxPageLength()));
+    }
+
+    private function createLikeKeyword(string $value): string
+    {
+        return '%' . strtr(mb_strtolower($value), ['!' => '!!', '%' => '!%', '_' => '!_']) . '%';
     }
 
     private function executeCount(QueryBuilder $qb): int

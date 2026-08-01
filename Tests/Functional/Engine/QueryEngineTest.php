@@ -94,4 +94,35 @@ final class QueryEngineTest extends FunctionalTestCase
         self::assertCount(1, $payload['data']);
         self::assertSame('About', $payload['data'][0]['title']);
     }
+
+    #[Test]
+    public function appliesAllOrderClausesAndCapsThePageLength(): void
+    {
+        $this->importCSVDataSet(__DIR__ . '/../../Fixtures/pages.csv');
+        $definition = (new GridDefinition())
+            ->addColumn('uid', 'UID', searchable: false, orderable: true)
+            ->addColumn('title', 'Title', searchable: true, orderable: true)
+            ->setMaxPageLength(2);
+        $request = new DataTableRequest(
+            draw: 1,
+            start: 0,
+            length: 50,
+            globalSearch: '',
+            columns: [
+                0 => ['index' => 0, 'data' => 'uid', 'name' => 'uid', 'searchable' => false, 'orderable' => true, 'searchValue' => ''],
+                1 => ['index' => 1, 'data' => 'title', 'name' => 'title', 'searchable' => true, 'orderable' => true, 'searchValue' => ''],
+            ],
+            orders: [
+                ['columnIndex' => 1, 'direction' => 'DESC'],
+                ['columnIndex' => 0, 'direction' => 'ASC'],
+            ],
+        );
+        $engine = new QueryEngine($this->get(ConnectionPool::class), new DataTableResponse());
+
+        $payload = $engine->process('pages', $definition, $request);
+
+        self::assertCount(2, $payload['data']);
+        self::assertSame('Site Root', $payload['data'][0]['title']);
+        self::assertSame('Contact', $payload['data'][1]['title']);
+    }
 }

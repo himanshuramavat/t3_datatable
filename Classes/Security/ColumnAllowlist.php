@@ -9,6 +9,8 @@ use HRR\T3Datatable\Exception\InvalidColumnException;
 
 /**
  * Validates column names against the grid definition allowlist.
+ *
+ * @internal
  */
 final class ColumnAllowlist
 {

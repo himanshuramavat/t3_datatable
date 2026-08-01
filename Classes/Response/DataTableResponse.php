@@ -6,6 +6,8 @@ namespace HRR\T3Datatable\Response;
 
 /**
  * Builds the DataTables-compatible JSON payload.
+ *
+ * @internal
  */
 final class DataTableResponse
 {

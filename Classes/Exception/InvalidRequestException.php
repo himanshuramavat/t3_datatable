@@ -7,6 +7,6 @@ namespace HRR\T3Datatable\Exception;
 use InvalidArgumentException;
 
 /** @internal */
-final class InvalidColumnException extends InvalidArgumentException
+final class InvalidRequestException extends InvalidArgumentException
 {
 }

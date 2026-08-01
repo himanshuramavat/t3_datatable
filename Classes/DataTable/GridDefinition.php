@@ -6,9 +6,13 @@ namespace HRR\T3Datatable\DataTable;
 
 /**
  * Fluent builder passed to {@see \HRR\T3Datatable\Contract\GridInterface::build()}.
+ *
+ * @api
  */
 final class GridDefinition
 {
+    public const DEFAULT_MAX_PAGE_LENGTH = 100;
+
     /** @var list<ColumnDefinition> */
     private array $columns = [];
 
@@ -17,6 +21,8 @@ final class GridDefinition
     private string $defaultOrderDirection = 'ASC';
 
     private int $defaultPageLength = 25;
+
+    private int $maxPageLength = self::DEFAULT_MAX_PAGE_LENGTH;
 
     private bool $withDeletedRestriction = false;
 
@@ -28,6 +34,10 @@ final class GridDefinition
         bool $searchable = true,
         bool $orderable = true,
     ): self {
+        if ($this->findColumn($name) !== null) {
+            throw new \InvalidArgumentException(sprintf('Column "%s" is declared more than once.', $name));
+        }
+
         $this->columns[] = new ColumnDefinition($name, $label, $searchable, $orderable);
 
         return $this;
@@ -43,7 +53,18 @@ final class GridDefinition
 
     public function setPageLength(int $length): self
     {
-        $this->defaultPageLength = max(1, $length);
+        $this->defaultPageLength = min(max(1, $length), $this->maxPageLength);
+
+        return $this;
+    }
+
+    /**
+     * Limit the number of rows that one AJAX request may return.
+     */
+    public function setMaxPageLength(int $length): self
+    {
+        $this->maxPageLength = max(1, $length);
+        $this->defaultPageLength = min($this->defaultPageLength, $this->maxPageLength);
 
         return $this;
     }
@@ -83,6 +104,11 @@ final class GridDefinition
     public function getDefaultPageLength(): int
     {
         return $this->defaultPageLength;
+    }
+
+    public function getMaxPageLength(): int
+    {
+        return $this->maxPageLength;
     }
 
     public function appliesDeletedRestriction(): bool

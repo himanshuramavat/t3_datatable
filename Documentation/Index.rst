@@ -90,6 +90,7 @@ This documentation is for two groups of people:
    Configuration/Index
    Developer/Index
    Usage/Index
+   Upgrade/2.0
    Troubleshooting/Index
 
 .. toctree::
