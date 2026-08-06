@@ -24,7 +24,7 @@ final readonly class DataTableRequest
 
     /**
      * @param array<int, array{data: string, name: string, searchable: bool, orderable: bool, searchValue: string}> $columns
-     * @param list<array{columnIndex: int, direction: string}> $orders
+     * @param list<array{columnIndex: int, direction: 'ASC'|'DESC'}> $orders
      */
     public function __construct(
         public int $draw,

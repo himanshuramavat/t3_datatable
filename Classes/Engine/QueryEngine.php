@@ -47,7 +47,7 @@ final class QueryEngine
         $this->applyPagination($dataQb, $definition, $request);
 
         $selectFields = array_map(
-            static fn ($column) => $dataQb->quoteIdentifier($column->name),
+            static fn ($column) => $column->name,
             $definition->getColumns(),
         );
         if ($selectFields !== []) {
@@ -86,7 +86,7 @@ final class QueryEngine
     {
         $qb = $this->connectionPool->getQueryBuilderForTable($tableName);
         $qb->getRestrictions()->removeAll();
-        $qb->from($qb->quoteIdentifier($tableName));
+        $qb->from($tableName);
 
         if ($definition->appliesDeletedRestriction()) {
             $qb->andWhere(
@@ -164,7 +164,7 @@ final class QueryEngine
 
         foreach ($orderings as $ordering) {
             $allowlist->assertOrderable($ordering['name']);
-            $qb->addOrderBy($qb->quoteIdentifier($ordering['name']), $ordering['direction']);
+            $qb->addOrderBy($ordering['name'], $ordering['direction']);
         }
     }
 
