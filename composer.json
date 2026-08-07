@@ -1,7 +1,7 @@
 {
     "name": "hrr/t3-datatable",
     "type": "typo3-cms-extension",
-    "description": "T3 DataTable - Create powerful TYPO3 backend data grids with automatic search, sorting and pagination — no custom AJAX or SQL boilerplate required.",
+    "description": "T3 DataTable – a server-side searchable, sortable, paginated DataTable extension for TYPO3 backend modules, built on the DataTables protocol with Doctrine DBAL.",
     "license": "GPL-2.0-or-later",
     "readme": "README.md",
     "authors": [
@@ -18,12 +18,19 @@
         }
     ],
     "keywords": [
-        "typo3",
-        "typo3-extension",
         "datatable",
         "datatables",
+        "t3-datatable",
+        "typo3-datatable",
         "data-grid",
+        "typo3",
+        "typo3-extension",
+        "typo3-13",
+        "typo3-14",
         "backend-module",
+        "extbase",
+        "fluid",
+        "server-side-processing",
         "ajax",
         "pagination",
         "sorting",
@@ -75,7 +82,7 @@
             "Package": {
                 "providesPackages": []
             },
-            "version": "1.0.0"
+            "version": "2.0.0"
         }
     },
     "scripts": {

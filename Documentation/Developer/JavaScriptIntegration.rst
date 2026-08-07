@@ -36,6 +36,15 @@ Instead, load the module from your controller and let it auto-initialize from
 
    $this->pageRenderer->loadJavaScriptModule('@hrr/t3-datatable/datatable-backend.js');
 
+Load the bundled JavaScript language labels too, otherwise the controls fall
+back to English:
+
+.. code-block:: php
+
+   $this->pageRenderer->addInlineLanguageLabelFile(
+       'EXT:t3_datatable/Resources/Private/Language/locallang_js.xlf',
+   );
+
 .. code-block:: html
    :caption: Fluid template, no inline script required
 

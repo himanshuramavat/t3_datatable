@@ -22,6 +22,7 @@ Step 1: Implement GridInterface
 
    use HRR\T3Datatable\Contract\GridInterface;
    use HRR\T3Datatable\DataTable\GridDefinition;
+   use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 
    final class MyRecordsGrid implements GridInterface
    {
@@ -33,6 +34,11 @@ Step 1: Implement GridInterface
        public function getTableName(): string
        {
            return 'tx_myext_records';
+       }
+
+       public function isAccessible(BackendUserAuthentication $backendUser): bool
+       {
+           return $backendUser->check('modules', 'my_module');
        }
 
        public function build(GridDefinition $definition): void
@@ -87,6 +93,8 @@ Column rules
 - Request column names must match the allowlist regex ``^[a-zA-Z0-9_.]+$``.
 - Use ``withDeletedRestriction()`` / ``withHiddenRestriction()`` only when the
   target table has those fields.
+- ``isAccessible()`` must check who may read this grid. The shared endpoint is
+  authenticated, but no grid is authorized implicitly.
 
 Demo reference
 ==============

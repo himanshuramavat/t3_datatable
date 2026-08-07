@@ -6,6 +6,8 @@ namespace HRR\T3Datatable\DataTable;
 
 /**
  * Immutable column metadata for a grid.
+ *
+ * @api
  */
 final readonly class ColumnDefinition
 {

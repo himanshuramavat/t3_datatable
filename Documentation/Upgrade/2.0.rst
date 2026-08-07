@@ -1,0 +1,36 @@
+.. include:: /Includes.rst.txt
+
+============
+Upgrade to 2.0
+============
+
+2.0 makes data access explicit and tightens the server-side protocol.
+
+Authorize every grid
+====================
+
+Implement the new method on every :php:`GridInterface` implementation. Return
+``true`` only when the backend user may read the rows exposed by that grid. For
+module-specific grids, check access to the owning module; for record data,
+apply any table and record-level policy required by your extension.
+
+.. code-block:: php
+
+   public function isAccessible(BackendUserAuthentication $backendUser): bool
+   {
+       return $backendUser->check('modules', 'my_module');
+   }
+
+Protocol limits
+===============
+
+``length`` must be positive. The server returns at most 100 rows per request by
+default. Use :php:`setMaxPageLength()` to select a smaller or larger explicit
+limit. Requests with more than 100 columns, more than 5 order clauses, an
+offset above 1,000,000, or search text longer than 255 characters receive 400.
+
+Search and ordering
+===================
+
+Search treats SQL LIKE metacharacters literally. All valid order clauses are
+now applied in the order sent by DataTables.

@@ -7,6 +7,7 @@ namespace HRR\T3Datatable\Controller;
 use HRR\T3Datatable\Engine\QueryEngine;
 use HRR\T3Datatable\Exception\GridNotFoundException;
 use HRR\T3Datatable\Exception\InvalidColumnException;
+use HRR\T3Datatable\Exception\InvalidRequestException;
 use HRR\T3Datatable\Registry\GridRegistry;
 use HRR\T3Datatable\Request\DataTableRequest;
 use Psr\Http\Message\ResponseInterface;
@@ -27,7 +28,8 @@ final class DataTableController
 
     public function dataAction(ServerRequestInterface $request): ResponseInterface
     {
-        if (!$this->isBackendUserAuthenticated()) {
+        $backendUser = $this->getAuthenticatedBackendUser();
+        if ($backendUser === null) {
             return new JsonResponse(['error' => 'Unauthorized'], 401);
         }
 
@@ -38,6 +40,9 @@ final class DataTableController
 
         try {
             $grid = $this->gridRegistry->get($gridId);
+            if (!$grid->isAccessible($backendUser)) {
+                return new JsonResponse(['error' => 'Forbidden'], 403);
+            }
             $definition = $this->gridRegistry->resolveDefinition($grid);
             $dataTableRequest = DataTableRequest::fromRequest($request);
             $payload = $this->queryEngine->process(
@@ -47,15 +52,15 @@ final class DataTableController
             );
 
             return new JsonResponse($payload);
-        } catch (GridNotFoundException|InvalidColumnException $exception) {
+        } catch (GridNotFoundException|InvalidColumnException|InvalidRequestException $exception) {
             return new JsonResponse(['error' => $exception->getMessage()], 400);
         }
     }
 
-    private function isBackendUserAuthenticated(): bool
+    private function getAuthenticatedBackendUser(): ?BackendUserAuthentication
     {
         $user = $GLOBALS['BE_USER'] ?? null;
 
-        return $user instanceof BackendUserAuthentication && $user->user !== null;
+        return $user instanceof BackendUserAuthentication && $user->user !== null ? $user : null;
     }
 }

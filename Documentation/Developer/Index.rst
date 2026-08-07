@@ -37,8 +37,13 @@ Core contract
    {
        public function getIdentifier(): string;
        public function getTableName(): string;
+       public function isAccessible(BackendUserAuthentication $backendUser): bool;
        public function build(GridDefinition $definition): void;
    }
+
+``isAccessible()`` is mandatory. It must enforce the module, table, and
+record-level permissions appropriate to the grid; authentication alone does not
+authorize a user to read every registered grid.
 
 AJAX endpoint
 =============
@@ -94,3 +99,12 @@ PHP classes
      - Validates searchable/orderable columns
    * - :php:`DataTableResponse`
      - Builds JSON payload
+
+Compatibility policy
+====================
+
+Only ``GridInterface``, ``GridDefinition``, ``ColumnDefinition``, and the
+documented JavaScript exports are public API. Other PHP classes are internal
+implementation details. Minor releases add backwards-compatible functionality;
+deprecated public API remains until the next major release and is recorded in
+the changelog and upgrade guide.

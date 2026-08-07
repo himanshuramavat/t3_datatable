@@ -52,6 +52,7 @@ Use :php:`GridDefinition` inside :php:`GridInterface::build()`:
        ->addColumn('title', 'Title', searchable: true, orderable: true)
        ->setDefaultOrder('crdate', 'DESC')
        ->setPageLength(25)
+       ->setMaxPageLength(100)
        ->withDeletedRestriction()
        ->withHiddenRestriction();
 
@@ -66,7 +67,9 @@ Use :php:`GridDefinition` inside :php:`GridInterface::build()`:
    * - ``setDefaultOrder()``
      - Fallback sort when the client sends no order
    * - ``setPageLength()``
-     - Default page size hint (client may override via ``length``)
+     - Default page size hint (client may override up to the server limit)
+   * - ``setMaxPageLength()``
+     - Maximum rows returned by one request (100 by default)
    * - ``withDeletedRestriction()``
      - Adds ``deleted = 0`` (table must have ``deleted`` column)
    * - ``withHiddenRestriction()``
@@ -78,3 +81,5 @@ Security defaults
 - Column names from the client are validated against the grid allowlist.
 - All query values use Doctrine named parameters.
 - The AJAX controller requires an authenticated backend user.
+- Each grid must authorize the backend user in ``GridInterface::isAccessible()``.
+- Search input, pagination, columns, and order clauses have server-side limits.
