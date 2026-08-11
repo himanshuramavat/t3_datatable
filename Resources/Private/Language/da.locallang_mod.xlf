@@ -11,9 +11,9 @@
         <source>T3 DataTable</source>
         <target state="final">T3 Datatabel</target>
       </trans-unit>
-      <trans-unit id="mlang_labels_tabdescr" approved="yes">
-        <source>Server-side DataTables for TYPO3 backend modules.</source>
-        <target state="final">Server-side DataTables for TYPO3 backend moduler.</target>
+      <trans-unit id="mlang_labels_tabdescr">
+        <source>Server-side searchable, sortable DataTable grids for TYPO3 backend modules.</source>
+        <target state="needs-translation">Server-side searchable, sortable DataTable grids for TYPO3 backend modules.</target>
       </trans-unit>
     </body>
   </file>
