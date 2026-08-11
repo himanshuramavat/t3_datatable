@@ -22,7 +22,7 @@ jobs:
           config: '.crowdin.yml'
           project_id: ${{ secrets.CROWDIN_PROJECT_ID }}
           token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
-          crowdin_branch_name: 'main'
+          crowdin_branch_name: 'master'
           upload_sources: true
           upload_translations: false
           download_sources: false
