@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages" product-name="t3_datatable" target-language="zh-TW">
+    <header/>
+    <body>
+      <trans-unit id="search.placeholder" approved="yes">
+        <source>Search records</source>
+        <target state="final">搜尋記錄</target>
+      </trans-unit>
+      <trans-unit id="length.label" approved="yes">
+        <source>Show</source>
+        <target state="final">顯示</target>
+      </trans-unit>
+      <trans-unit id="pagination.previous" approved="yes">
+        <source>Previous</source>
+        <target state="final">上一頁</target>
+      </trans-unit>
+      <trans-unit id="pagination.next" approved="yes">
+        <source>Next</source>
+        <target state="final">下一頁</target>
+      </trans-unit>
+      <trans-unit id="pagination.range" approved="yes">
+        <source>%1$s-%2$s of %3$s</source>
+        <target state="final">%1$s-%2$s，共 %3$s 筆</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

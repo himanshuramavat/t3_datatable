@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages" product-name="t3_datatable" target-language="zh-TW">
+    <header/>
+    <body>
+      <trans-unit id="mlang_tabs_tab" approved="yes">
+        <source>T3 DataTable</source>
+        <target state="final">T3 DataTable</target>
+      </trans-unit>
+      <trans-unit id="mlang_labels_tablabel" approved="yes">
+        <source>T3 DataTable</source>
+        <target state="final">T3 DataTable</target>
+      </trans-unit>
+      <trans-unit id="mlang_labels_tabdescr" approved="yes">
+        <source>Pages listed via the T3 DataTable engine.</source>
+        <target state="final">透過 T3 DataTable 引擎列出的頁面。</target>
+      </trans-unit>
+      <trans-unit id="module.demo.title" approved="yes">
+        <source>Demo grid</source>
+        <target state="final">示範網格</target>
+      </trans-unit>
+      <trans-unit id="module.demo.subtitle" approved="yes">
+        <source>Server-side search, sort, and pagination for TYPO3 backend modules.</source>
+        <target state="final">適用於 TYPO3 後端模組的伺服器端搜尋、排序與分頁。</target>
+      </trans-unit>
+      <trans-unit id="module.demo.refresh" approved="yes">
+        <source>Refresh</source>
+        <target state="final">重新整理</target>
+      </trans-unit>
+      <trans-unit id="module.demo.infobox.title" approved="yes">
+        <source>Server-side DataTable</source>
+        <target state="final">伺服器端 DataTable</target>
+      </trans-unit>
+      <trans-unit id="module.demo.infobox.message" approved="yes">
+        <source>This module demonstrates the shared AJAX endpoint, column allowlisting, and CSP-safe JavaScript bootstrap using TYPO3 pages.</source>
+        <target state="final">此模組示範了使用 TYPO3 頁面的共用 AJAX 端點、欄位白名單及 CSP 安全的 JavaScript 啟動程序。</target>
+      </trans-unit>
+      <trans-unit id="module.demo.note.close" approved="yes">
+        <source>Dismiss note</source>
+        <target state="final">關閉提示</target>
+      </trans-unit>
+      <trans-unit id="module.demo.meta.grid" approved="yes">
+        <source>Grid</source>
+        <target state="final">網格</target>
+      </trans-unit>
+      <trans-unit id="module.demo.meta.table" approved="yes">
+        <source>Table</source>
+        <target state="final">資料表</target>
+      </trans-unit>
+      <trans-unit id="module.demo.meta.pageLength" approved="yes">
+        <source>Page size</source>
+        <target state="final">每頁筆數</target>
+      </trans-unit>
+      <trans-unit id="module.demo.card.title" approved="yes">
+        <source>Pages</source>
+        <target state="final">頁面</target>
+      </trans-unit>
+      <trans-unit id="module.demo.card.subtitle" approved="yes">
+        <source>Server-side search, sort, and pagination — change page size in the toolbar below.</source>
+        <target state="final">伺服器端搜尋、排序與分頁 — 可在下方工具列變更每頁顯示筆數。</target>
+      </trans-unit>
+      <trans-unit id="module.demo.chips.label" approved="yes">
+        <source>Grid configuration</source>
+        <target state="final">網格設定</target>
+      </trans-unit>
+      <trans-unit id="module.demo.footer.made_with" approved="yes">
+        <source>Made with 🧡 for TYPO3 developers by</source>
+        <target state="final">由 🧡 為 TYPO3 開發者製作，作者為</target>
+      </trans-unit>
+      <trans-unit id="module.demo.footer.packagist" approved="yes">
+        <source>Packagist</source>
+        <target state="final">Packagist</target>
+      </trans-unit>
+      <trans-unit id="module.demo.footer.protocol" approved="yes">
+        <source>DataTables protocol</source>
+        <target state="final">DataTables 協議</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

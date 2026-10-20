@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages" product-name="t3_datatable" target-language="t3">
+    <header/>
+    <body>
+      <trans-unit id="mlang_tabs_tab">
+        <source>T3 DataTable</source>
+        <target>crwdns412835:0crwdne412835:0</target>
+      </trans-unit>
+      <trans-unit id="mlang_labels_tablabel">
+        <source>T3 DataTable</source>
+        <target>crwdns412837:0crwdne412837:0</target>
+      </trans-unit>
+      <trans-unit id="mlang_labels_tabdescr">
+        <source>Pages listed via the T3 DataTable engine.</source>
+        <target>crwdns412839:0crwdne412839:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.title">
+        <source>Demo grid</source>
+        <target>crwdns412841:0crwdne412841:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.subtitle">
+        <source>Server-side search, sort, and pagination for TYPO3 backend modules.</source>
+        <target>crwdns412843:0crwdne412843:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.refresh">
+        <source>Refresh</source>
+        <target>crwdns412845:0crwdne412845:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.infobox.title">
+        <source>Server-side DataTable</source>
+        <target>crwdns412847:0crwdne412847:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.infobox.message">
+        <source>This module demonstrates the shared AJAX endpoint, column allowlisting, and CSP-safe JavaScript bootstrap using TYPO3 pages.</source>
+        <target>crwdns412849:0crwdne412849:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.note.close">
+        <source>Dismiss note</source>
+        <target>crwdns412851:0crwdne412851:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.meta.grid">
+        <source>Grid</source>
+        <target>crwdns412853:0crwdne412853:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.meta.table">
+        <source>Table</source>
+        <target>crwdns412855:0crwdne412855:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.meta.pageLength">
+        <source>Page size</source>
+        <target>crwdns412857:0crwdne412857:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.card.title">
+        <source>Pages</source>
+        <target>crwdns412859:0crwdne412859:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.card.subtitle">
+        <source>Server-side search, sort, and pagination — change page size in the toolbar below.</source>
+        <target>crwdns412861:0crwdne412861:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.chips.label">
+        <source>Grid configuration</source>
+        <target>crwdns412863:0crwdne412863:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.footer.made_with">
+        <source>Made with 🧡 for TYPO3 developers by</source>
+        <target>crwdns412865:0crwdne412865:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.footer.packagist">
+        <source>Packagist</source>
+        <target>crwdns412867:0crwdne412867:0</target>
+      </trans-unit>
+      <trans-unit id="module.demo.footer.protocol">
+        <source>DataTables protocol</source>
+        <target>crwdns412869:0crwdne412869:0</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

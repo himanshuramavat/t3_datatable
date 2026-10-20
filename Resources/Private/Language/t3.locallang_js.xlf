@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages" product-name="t3_datatable" target-language="t3">
+    <header/>
+    <body>
+      <trans-unit id="search.placeholder">
+        <source>Search records</source>
+        <target>crwdns412819:0crwdne412819:0</target>
+      </trans-unit>
+      <trans-unit id="length.label">
+        <source>Show</source>
+        <target>crwdns412821:0crwdne412821:0</target>
+      </trans-unit>
+      <trans-unit id="pagination.previous">
+        <source>Previous</source>
+        <target>crwdns412823:0crwdne412823:0</target>
+      </trans-unit>
+      <trans-unit id="pagination.next">
+        <source>Next</source>
+        <target>crwdns412825:0crwdne412825:0</target>
+      </trans-unit>
+      <trans-unit id="pagination.range">
+        <source>%1$s-%2$s of %3$s</source>
+        <target>crwdns412827:0%1$scrwdnd412827:0%2$scrwdnd412827:0%3$scrwdne412827:0</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

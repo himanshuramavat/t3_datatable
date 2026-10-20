@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages" product-name="t3_datatable" target-language="ru">
+    <header/>
+    <body>
+      <trans-unit id="mlang_tabs_tab" approved="yes">
+        <source>T3 DataTable</source>
+        <target state="final">T3 Таблица данных</target>
+      </trans-unit>
+      <trans-unit id="mlang_labels_tablabel" approved="yes">
+        <source>T3 DataTable</source>
+        <target state="final">T3 Таблица данных</target>
+      </trans-unit>
+      <trans-unit id="mlang_labels_tabdescr" approved="yes">
+        <source>Pages listed via the T3 DataTable engine.</source>
+        <target state="final">Страницы, перечисленные в движке T3 DataTable .</target>
+      </trans-unit>
+      <trans-unit id="module.demo.title" approved="yes">
+        <source>Demo grid</source>
+        <target state="final">Демо сетка</target>
+      </trans-unit>
+      <trans-unit id="module.demo.subtitle" approved="yes">
+        <source>Server-side search, sort, and pagination for TYPO3 backend modules.</source>
+        <target state="final">Поиск на стороне сервера, сортировка и пагинация для backend-модулей TYPO3.</target>
+      </trans-unit>
+      <trans-unit id="module.demo.refresh" approved="yes">
+        <source>Refresh</source>
+        <target state="final">Обновить</target>
+      </trans-unit>
+      <trans-unit id="module.demo.infobox.title" approved="yes">
+        <source>Server-side DataTable</source>
+        <target state="final">Таблица данных на стороне сервера</target>
+      </trans-unit>
+      <trans-unit id="module.demo.infobox.message" approved="yes">
+        <source>This module demonstrates the shared AJAX endpoint, column allowlisting, and CSP-safe JavaScript bootstrap using TYPO3 pages.</source>
+        <target state="final">Этот модуль демонстрирует общую конечную точку AJAX, разрешенную колонку и безопасную загрузку JavaScript на страницах TYPO3.</target>
+      </trans-unit>
+      <trans-unit id="module.demo.note.close" approved="yes">
+        <source>Dismiss note</source>
+        <target state="final">Отклонить заметку</target>
+      </trans-unit>
+      <trans-unit id="module.demo.meta.grid" approved="yes">
+        <source>Grid</source>
+        <target state="final">Сетка</target>
+      </trans-unit>
+      <trans-unit id="module.demo.meta.table" approved="yes">
+        <source>Table</source>
+        <target state="final">Таблица</target>
+      </trans-unit>
+      <trans-unit id="module.demo.meta.pageLength" approved="yes">
+        <source>Page size</source>
+        <target state="final">Размер страницы</target>
+      </trans-unit>
+      <trans-unit id="module.demo.card.title" approved="yes">
+        <source>Pages</source>
+        <target state="final">Страницы</target>
+      </trans-unit>
+      <trans-unit id="module.demo.card.subtitle" approved="yes">
+        <source>Server-side search, sort, and pagination — change page size in the toolbar below.</source>
+        <target state="final">Поиск на стороне сервера, сортировка и пагинация — изменение размера страницы на панели инструментов ниже.</target>
+      </trans-unit>
+      <trans-unit id="module.demo.chips.label" approved="yes">
+        <source>Grid configuration</source>
+        <target state="final">Конфигурация сетки</target>
+      </trans-unit>
+      <trans-unit id="module.demo.footer.made_with" approved="yes">
+        <source>Made with 🧡 for TYPO3 developers by</source>
+        <target state="final">Сделано с 🧡 для разработчиков TYPO3 от</target>
+      </trans-unit>
+      <trans-unit id="module.demo.footer.packagist" approved="yes">
+        <source>Packagist</source>
+        <target state="final">Упаковщик</target>
+      </trans-unit>
+      <trans-unit id="module.demo.footer.protocol" approved="yes">
+        <source>DataTables protocol</source>
+        <target state="final">DataTables protocol</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
